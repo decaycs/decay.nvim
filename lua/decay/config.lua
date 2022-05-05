@@ -146,7 +146,7 @@ M.highlights_base = function (colors)
     TSPunctBracket = { guifg = colors.foreground }, -- For brackets and parens.
     TSPunctSpecial = { guifg = colors.color7 }, -- For special punctutation that does not fall in the catagories before.
     -- TSRepeat            = { };    -- For keywords related to loops.
-    TSRepeat = { guifg = colors.color10 },
+    TSRepeat = { guifg = colors.color9 },
     TSString = { guifg = colors.color3 },
     TSStringRegex = { guifg = colors.color5 }, -- For regexes.
     TSStringEscape = { guifg = colors.color5 }, -- For escape characters within a string.
@@ -254,7 +254,7 @@ M.highlights_base = function (colors)
 
     -- BufferLine
     BufferLineIndicatorSelected = { guifg = colors.color2 },
-    BufferLineFill = { guifg = colors.background, guibg = colors.background },
+    BufferLineFill = { guifg = colors.foreground, guibg = colors.contrast },
   }
 end
 
