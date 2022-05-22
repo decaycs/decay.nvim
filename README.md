@@ -91,7 +91,7 @@ colorscheme decay
 
 You can enable the darker palette too using vim script! :D
 
-```sh
+```vim
 colorscheme dark-decay
 ```
 
