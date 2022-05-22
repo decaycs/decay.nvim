@@ -54,6 +54,7 @@ if not present then
 end
 
 decay.setup({
+  dark = false,
   nvim_tree = {
     contrast = true, -- or false to disable tree contrast
   },
@@ -64,8 +65,20 @@ or if u want a more simple example:
 
 ```lua
 require('decay').setup({
+  dark = false,
   nvim_tree = {
     contrast = true, -- or false to disable tree contrast
+  },
+})
+```
+
+Or if you want you can try the darker palette! :3
+
+```lua
+require('decay').setup({
+  dark = true,
+  nvim_tree = {
+    contrast = true -- or false to disable tree contrast,
   },
 })
 ```
@@ -76,9 +89,15 @@ Or with vim script if u want (not able the posibility to disable tree contrast)
 colorscheme decay
 ```
 
+You can enable the darker palette too using vim script! :D
+
+```sh
+colorscheme dark-decay
+```
+
 ## Lualine
 
-This decay port has lualine integration, enable it!!
+This decay port has lualine integration, enable it! (if you use lualine lmao :D)
 
 ```lua
 require('lualine').setup {
@@ -95,7 +114,7 @@ require('lualine').setup {
 U can get the colors of decay using the decay-lua based api! Check at this :3
 
 ```lua
-local colors = require('decay.core').get_colors()
+local colors = require('decay.core').get_colors(false) -- or true to get the darker palette
 
-print(colors.background) -- will output #171B20
+print(colors.background) -- will output #171B20 or #101419 if you're using the darker palette
 ```
