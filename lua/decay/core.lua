@@ -3,7 +3,7 @@ local M = {}
 local function get_darker_decay()
   return {
     background = "#101419",
-    contrast = '#15191e',
+    contrast = '#0e1217',
     foreground = "#b6beca",
     cursorline = '#1a1e23',
     cursor = "#b6beca",
