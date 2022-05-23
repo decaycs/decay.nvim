@@ -1,38 +1,47 @@
 local core = require('decay.core')
 local colors = core.get_colors()
 
-local night = {}
+local decay = {}
 
-night.normal = {
-  a = { bg = colors.color2, fg = colors.background },
-  b = { bg = colors.background, fg = colors.color7 },
+decay.normal = {
+  a = { bg = colors.color4, fg = colors.background },
+  b = { bg = colors.lighter, fg = colors.foreground },
   c = { bg = colors.background, fg = colors.foreground },
+  z = { bg = colors.color2, fg = colors.background },
 }
 
-night.insert = {
-  a = { bg = colors.color10, fg = colors.background },
-  b = { bg = colors.background, fg = colors.color4 },
+decay.insert = {
+  a = { bg = colors.color5, fg = colors.background },
+  b = { bg = colors.lighter, fg = colors.foreground },
+  c = { bg = colors.background, fg = colors.foreground },
+  z = { bg = colors.color2, fg = colors.background },
 }
 
-night.command = {
+decay.command = {
   a = { bg = colors.color1, fg = colors.background },
-  b = { bg = colors.background, fg = colors.color5 },
+  b = { bg = colors.lighter, fg = colors.foreground },
+  c = { bg = colors.background, fg = colors.foreground },
+  z = { bg = colors.color2, fg = colors.background },
 }
 
-night.visual = {
+decay.visual = {
   a = { bg = colors.color6, fg = colors.background },
-  b = { bg = colors.background, fg = colors.color6 },
+  b = { bg = colors.lighter, fg = colors.foreground },
+  c = { bg = colors.background, fg = colors.foreground },
+  z = { bg = colors.color2, fg = colors.background },
 }
 
-night.replace = {
+decay.replace = {
   a = { bg = colors.color1, fg = colors.background },
-  b = { bg = colors.background, fg = colors.color11 },
+  b = { bg = colors.lighter, fg = colors.foreground },
+  c = { bg = colors.background, fg = colors.foreground },
+  z = { bg = colors.color2, fg = colors.background },
 }
 
-night.inactive = {
+decay.inactive = {
   a = { bg = colors.background, fg = colors.color7 },
-  b = { bg = colors.background, fg = colors.foreground, gui = "bold" },
+  b = { bg = colors.lighter, fg = colors.foreground },
   c = { bg = colors.background, fg = colors.foreground },
 }
 
-return night
+return decay
