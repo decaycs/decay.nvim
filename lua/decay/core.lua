@@ -4,6 +4,7 @@ local function get_darker_decay()
   return {
     background = "#101419",
     contrast = '#0e1217',
+    statusline_bg = '#13171c',
     lighter = '#1a1e23',
     foreground = "#b6beca",
     cursorline = '#1a1e23',
@@ -55,6 +56,7 @@ local function get_decay()
 end
 
 function M.get_colors(dark)
+  dark = vim.g.decay_dark_mode or false
   if dark then
     return get_darker_decay()
   else
