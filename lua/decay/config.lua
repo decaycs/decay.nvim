@@ -18,7 +18,7 @@ M.highlights_base = function (colors)
     PmenuSel = { guifg = colors.background, guibg = colors.color4 },
     WildMenu = { guifg = colors.color7, guibg = colors.color4 },
     CursorLineNr = { guifg = colors.foreground },
-    Comment = { guifg = colors.color8 },
+    Comment = { guifg = colors.comments },
     Folded = { guifg = colors.color4, guibg = colors.background },
     FoldColumn = { guifg = colors.color4, guibg = colors.background },
     LineNr = { guifg = colors.color8, guibg = colors.background },
@@ -86,7 +86,7 @@ M.highlights_base = function (colors)
     Tag = { guifg = colors.color4 },
     Debug = { guifg = colors.color1 },
     Delimiter = { guifg = colors.foreground },
-    SpecialComment = { guifg = colors.color2 },
+    SpecialComment = { guifg = colors.comments },
     Ignore = { guifg = colors.color7, guibg = colors.background },
     Todo = { guifg = colors.color1, guibg = colors.background },
     Error = { guifg = colors.color1, guibg = colors.background },
@@ -115,7 +115,7 @@ M.highlights_base = function (colors)
     -- TSCharacter         = { };    -- For characters.
     -- TSComment           = { };    -- For color1 blocks.
     TSNote = { guifg = colors.background, guibg = colors.color5 },
-    TSComment = { guifg = colors.color0 },
+    TSComment = { guifg = colors.comments },
     TSWarning = { guifg = colors.background, guibg = colors.color5 },
     TSDanger = { guifg = colors.background, guibg = colors.color3 },
     TSConstructor = { guifg = colors.color10 }, -- For constructor calls and definitions: `= { }` in Lua, and Java constructors.
