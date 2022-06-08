@@ -57,7 +57,7 @@ M.highlights_base = function (colors)
     EndOfBuffer = { guifg = colors.background },
     NonText = { guifg = colors.color1 },
     Variable = { guifg = colors.color5 },
-    String = { guifg = colors.color2 },
+    String = { guifg = colors.color3 },
     Character = { guifg = colors.color12 },
     Constant = { guifg = colors.color5 },
     Number = { guifg = colors.color3 },
@@ -68,10 +68,10 @@ M.highlights_base = function (colors)
     Operator = { guifg = colors.color6 },
     Type = { guifg = colors.color5 },
     StorageClass = { guifg = colors.color7 },
-    Structure = { guifg = colors.color6 },
-    Typedef = { guifg = colors.color6 },
+    Structure = { guifg = colors.color1 },
+    Typedef = { guifg = colors.color1 },
     Keyword = { guifg = colors.color2 },
-    Statement = { guifg = colors.color6 },
+    Statement = { guifg = colors.color1 },
     Conditional = { guifg = colors.color9 },
     Repeat = { guifg = colors.color4 },
     Label = { guifg = colors.color1 },
@@ -81,7 +81,7 @@ M.highlights_base = function (colors)
     Define = { guifg = colors.color4 },
     Macro = { guifg = colors.color6 },
     PreCondit = { guifg = colors.color6 },
-    Special = { guifg = colors.color6 },
+    Special = { guifg = colors.color1 },
     SpecialChar = { guifg = colors.foreground },
     Tag = { guifg = colors.color4 },
     Debug = { guifg = colors.color1 },
@@ -207,7 +207,7 @@ M.highlights_base = function (colors)
     -- Telescope
     TelescopeBorder = { guifg = colors.color0, guibg = colors.background },
     TelescopeNormal = { guifg = colors.foreground, guibg = colors.background },
-    TelescopeSelection = { guifg = colors.background, guibg = colors.color2 },
+    TelescopeSelection = { guifg = colors.foreground, guibg = colors.cursorline },
 
     -- Indent Blank Line
     IndentBlanklineChar = { guifg = colors.color0, guibg = colors.background },
@@ -255,6 +255,9 @@ M.highlights_base = function (colors)
     -- BufferLine
     BufferLineIndicatorSelected = { guifg = colors.color2 },
     BufferLineFill = { guifg = colors.foreground, guibg = colors.contrast },
+
+    -- BarBar
+    BufferCurrentSign = { guifg = colors.color4 },
   }
 end
 
