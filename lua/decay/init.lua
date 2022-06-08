@@ -12,6 +12,7 @@ function M.setup (opts)
   -- disable bold
   vim.cmd [[ set t_md= ]]
   vim.g.decay_dark_mode = opts.dark
+
   local colors = core.get_colors(opts.dark) -- getting the correct palette
   vim.opt.termguicolors = true
   highlights.highlight_all(colors, opts)
