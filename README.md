@@ -83,6 +83,19 @@ require('decay').setup({
 })
 ```
 
+Or the light palette too :)
+
+```lua
+vim.o.background = 'light'
+
+require('decay').setup({
+  dark = false, -- or true, the light theme will override this lol
+  nvim_tree = {
+    contrast = true -- nvim tree contrast
+  },
+})
+```
+
 Or with vim script if u want (not able the posibility to disable tree contrast)
 
 ```vim
@@ -93,6 +106,13 @@ You can enable the darker palette too using vim script! :D
 
 ```vim
 colorscheme dark-decay
+```
+
+You can use the light palette too using vim script:
+
+```vim
+set background=light
+colorscheme decay
 ```
 
 ## Lualine
@@ -118,3 +138,5 @@ local colors = require('decay.core').get_colors(false) -- or true to get the dar
 
 print(colors.background) -- will output #171B20 or #101419 if you're using the darker palette
 ```
+
+> If `background` is `light`, `decay.core.get_colors` will return the light decay palette
