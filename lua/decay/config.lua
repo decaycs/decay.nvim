@@ -57,7 +57,7 @@ M.highlights_base = function (colors)
     EndOfBuffer = { guifg = colors.background },
     NonText = { guifg = colors.color1 },
     Variable = { guifg = colors.color5 },
-    String = { guifg = colors.color3 },
+    String = { guifg = colors.color2 },
     Character = { guifg = colors.color12 },
     Constant = { guifg = colors.color5 },
     Number = { guifg = colors.color3 },
@@ -70,10 +70,10 @@ M.highlights_base = function (colors)
     StorageClass = { guifg = colors.color7 },
     Structure = { guifg = colors.color6 },
     Typedef = { guifg = colors.color6 },
-    Keyword = { guifg = colors.color2 },
+    Keyword = { guifg = colors.color5 },
     Statement = { guifg = colors.color6 },
-    Conditional = { guifg = colors.color9 },
-    Repeat = { guifg = colors.color4 },
+    Conditional = { guifg = colors.color5 },
+    Repeat = { guifg = colors.color5 },
     Label = { guifg = colors.color1 },
     Exception = { guifg = colors.color9 },
     Include = { guifg = colors.color9 },
@@ -119,7 +119,7 @@ M.highlights_base = function (colors)
     TSWarning = { guifg = colors.background, guibg = colors.color5 },
     TSDanger = { guifg = colors.background, guibg = colors.color3 },
     TSConstructor = { guifg = colors.color10 }, -- For constructor calls and definitions: `= { }` in Lua, and Java constructors.
-    -- TSConditional       = { };    -- For keywords related to conditionnals.
+    TSConditional       = { guifg = colors.color5 };    -- For keywords related to conditionnals.
     -- TSConstant          = { };    -- For constants
     -- TSConstBuiltin      = { };    -- For constant that are built in the language: `nil` in Lua.
     -- TSConstMacro        = { };    -- For constants that are defined by macros: `NULL` in C.
@@ -131,23 +131,23 @@ M.highlights_base = function (colors)
     -- TSFuncBuiltin       = { };    -- For builtin functions: `table.insert` in Lua.
     -- TSFuncMacro         = { };    -- For macro defined fuctions (calls and definitions): each `macro_rules` in Rust.
     -- TSInclude           = { };    -- For includes: `#include` in C, `use` or `extern crate` in Rust, or `require` in Lua.
-    TSKeyword = { guifg = colors.color9 }, -- For keywords that don't fall in previous categories.
-    TSKeywordFunction = { guifg = colors.color9 }, -- For keywords used to define a fuction.
+    TSKeyword = { guifg = colors.color5 }, -- For keywords that don't fall in previous categories.
+    TSKeywordFunction = { guifg = colors.color5 }, -- For keywords used to define a fuction.
     TSLabel = { guifg = colors.color7 }, -- For labels: `label:` in C and `:label:` in Lua.
     -- TSMethod            = { };    -- For method calls and definitions.
     -- TSNamespace         = { };    -- For identifiers referring to modules and namespaces.
     -- TSNone              = { };    -- TODO: docs
-    TSNumber = { guifg = colors.color3 },
+    TSNumber = { guifg = colors.color1 },
     TSOperator = { guifg = colors.color7 }, -- For any operator: `+`, but also `->` and `*` in C.
     TSParameter = { guifg = colors.color5 }, -- For parameters of a function.
     -- TSParameterReference= { };    -- For references to parameters of a function.
-    TSProperty = { guifg = colors.color2 }, -- Same as `TSField`.
+    TSProperty = { guifg = colors.color7 }, -- Same as `TSField`.
     TSPunctDelimiter = { guifg = colors.color7 }, -- For delimiters ie: `.`
     TSPunctBracket = { guifg = colors.foreground }, -- For brackets and parens.
     TSPunctSpecial = { guifg = colors.color7 }, -- For special punctutation that does not fall in the catagories before.
     -- TSRepeat            = { };    -- For keywords related to loops.
-    TSRepeat = { guifg = colors.color9 },
-    TSString = { guifg = colors.color3 },
+    TSRepeat = { guifg = colors.color5 },
+    TSString = { guifg = colors.color2 },
     TSStringRegex = { guifg = colors.color5 }, -- For regexes.
     TSStringEscape = { guifg = colors.color5 }, -- For escape characters within a string.
     -- TSSymbol            = { };    -- For identifiers referring to symbols or atoms.
