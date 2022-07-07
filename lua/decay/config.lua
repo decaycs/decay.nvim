@@ -120,9 +120,9 @@ M.highlights_base = function (colors)
     TSDanger = { guifg = colors.background, guibg = colors.color3 },
     TSConstructor = { guifg = colors.color10 }, -- For constructor calls and definitions: `= { }` in Lua, and Java constructors.
     TSConditional       = { guifg = colors.color5 };    -- For keywords related to conditionnals.
-    -- TSConstant          = { };    -- For constants
-    -- TSConstBuiltin      = { };    -- For constant that are built in the language: `nil` in Lua.
-    -- TSConstMacro        = { };    -- For constants that are defined by macros: `NULL` in C.
+    TSConstant          = { guifg = colors.color1 };    -- For constants
+    TSConstBuiltin      = { guifg = colors.color1 };    -- For constant that are built in the language: `nil` in Lua.
+    TSConstMacro        = { guifg = colors.color1 };    -- For constants that are defined by macros: `NULL` in C.
     -- TSError             = { };    -- For syntax/parser errors.
     -- TSException         = { };    -- For exception related keywords.
     TSField = { guifg = colors.color4 }, -- For fields.
@@ -139,7 +139,7 @@ M.highlights_base = function (colors)
     -- TSNone              = { };    -- TODO: docs
     TSNumber = { guifg = colors.color1 },
     TSOperator = { guifg = colors.color7 }, -- For any operator: `+`, but also `->` and `*` in C.
-    TSParameter = { guifg = colors.color5 }, -- For parameters of a function.
+    TSParameter = { guifg = colors.color6 }, -- For parameters of a function.
     -- TSParameterReference= { };    -- For references to parameters of a function.
     TSProperty = { guifg = colors.color7 }, -- Same as `TSField`.
     TSPunctDelimiter = { guifg = colors.color7 }, -- For delimiters ie: `.`
@@ -153,7 +153,7 @@ M.highlights_base = function (colors)
     -- TSSymbol            = { };    -- For identifiers referring to symbols or atoms.
     -- TSType              = { };    -- For types.
     -- TSTypeBuiltin       = { };    -- For builtin types.
-    TSVariableBuiltin = { guifg = colors.color1 }, -- Variable names that are defined by the languages, like `this` or `self`.
+    TSVariableBuiltin = { guifg = colors.color3 }, -- Variable names that are defined by the languages, like `this` or `self`.
 
     TSTag               = { guifg = colors.color1 };    -- Tags like html tag names.
     TSTagDelimiter      = { guifg = colors.foreground };    -- Tag delimiter like `<` `>` `/`
