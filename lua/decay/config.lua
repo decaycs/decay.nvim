@@ -76,7 +76,7 @@ M.highlights_base = function (colors)
     Repeat = { guifg = colors.color5 },
     Label = { guifg = colors.color1 },
     Exception = { guifg = colors.color9 },
-    Include = { guifg = colors.color9 },
+    Include = { guifg = colors.color5 },
     PreProc = { guifg = colors.color4 },
     Define = { guifg = colors.color4 },
     Macro = { guifg = colors.color6 },
