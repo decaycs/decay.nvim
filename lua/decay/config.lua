@@ -3,8 +3,8 @@ local M = {}
 M.highlights_base = function (colors)
   return {
     Normal = { guifg = colors.foreground, guibg = colors.background },
-    StatusLineNC = { guibg = colors.background, guifg = colors.background },
-    StatusLine = { guibg = colors.background, guifg = colors.background },
+    StatusLineNC = { guibg = colors.statusline_bg, guifg = colors.foreground },
+    StatusLine = { guibg = colors.statusline_bg, guifg = colors.foreground },
     SignColumn = { guibg = colors.background, guifg = colors.background },
     MsgArea = { guifg = colors.foreground, guibg = colors.background },
     ModeMsg = { guifg = colors.foreground, guibg = colors.background },
