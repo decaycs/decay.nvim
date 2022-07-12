@@ -1,19 +1,19 @@
 local M = {}
-local hi = vim.highlight.create
+local hi = vim.api.nvim_set_hl
 local config = require('decay.config')
 
 function M.highlight_all(colors, opts)
   local base_highlights = config.highlights_base(colors)
   for group, properties in pairs(base_highlights) do
-    hi(group, properties, false)
+    hi(0, group, properties)
   end
   local ntree = opts.nvim_tree or { contrast = false }
   if ntree.contrast == true then
-    hi('NvimTreeNormal', { guibg = colors.contrast })
-    hi('NvimTreeNormalNC', { guibg = colors.contrast })
-    hi('NvimTreeEndOfBuffer', { guibg = colors.contrast, guifg = colors.contrast })
-    hi('NvimTreeEndOfBufferNC', { guibg = colors.contrast, guifg = colors.contrast })
-    hi('NvimTreeVertSplit', { guifg = colors.background, guibg = colors.background })
+    hi(0, 'NvimTreeNormal', { background = colors.contrast })
+    hi(0, 'NvimTreeNormalNC', { background = colors.contrast })
+    hi(0, 'NvimTreeEndOfBuffer', { background = colors.contrast, foreground = colors.contrast })
+    hi(0, 'NvimTreeEndOfBufferNC', { background = colors.contrast, foreground = colors.contrast })
+    hi(0, 'NvimTreeVertSplit', { foreground = colors.background, background = colors.background })
   end
 end
 

@@ -2,104 +2,104 @@ local M = {}
 
 M.highlights_base = function (colors)
   return {
-    Normal = { guifg = colors.foreground, guibg = colors.background },
-    StatusLineNC = { guibg = colors.statusline_bg, guifg = colors.foreground },
-    StatusLine = { guibg = colors.statusline_bg, guifg = colors.foreground },
-    SignColumn = { guibg = colors.background, guifg = colors.background },
-    MsgArea = { guifg = colors.foreground, guibg = colors.background },
-    ModeMsg = { guifg = colors.foreground, guibg = colors.background },
-    MsgSeparator = { guifg = colors.foreground, guibg = colors.background },
-    SpellBad = { guifg = colors.color2 },
-    SpellCap = { guifg = colors.color6 },
-    SpellLocal = { guifg = colors.color4 },
-    SpellRare = { guifg = colors.color6 },
-    NormalNC = { guifg = colors.foreground, guibg = colors.background },
-    Pmenu = { guifg = colors.foreground, guibg = colors.background },
-    PmenuSel = { guifg = colors.background, guibg = colors.color4 },
-    WildMenu = { guifg = colors.color7, guibg = colors.color4 },
-    CursorLineNr = { guifg = colors.foreground },
-    Comment = { guifg = colors.comments },
-    Folded = { guifg = colors.color4, guibg = colors.background },
-    FoldColumn = { guifg = colors.color4, guibg = colors.background },
-    LineNr = { guifg = colors.color8, guibg = colors.background },
-    FloatBorder = { guifg = colors.background, guibg = colors.background },
-    Whitespace = { guifg = colors.color1 },
-    VertSplit = { guifg = colors.background, guibg = colors.color0 },
-    CursorLine = { guibg = colors.cursorline },
-    CursorColumn = { guibg = colors.background },
-    ColorColumn = { guibg = colors.background },
-    NormalFloat = { guibg = colors.background },
-    Visual = { guibg = colors.color0, guifg = colors.foreground },
-    VisualNOS = { guibg = colors.background },
-    WarningMsg = { guifg = colors.color3, guibg = colors.background },
-    DiffAdd = { guibg = colors.background, guifg = colors.color2 },
-    DiffChange = { guibg = colors.background, guifg = colors.color4 },
-    DiffDelete = { guibg = colors.background, guifg = colors.color1 },
-    QuickFixLine = { guibg = colors.color2 },
-    PmenuSbar = { guibg = colors.background },
-    PmenuThumb = { guibg = colors.color2 },
-    MatchParen = { guifg = colors.color4, guibg = colors.background },
-    Cursor = { guifg = colors.fomeground, guibg = colors.cursor },
-    lCursor = { guifg = colors.foreground, guibg = colors.cursor },
-    CursorIM = { guifg = colors.foreground, guibg = colors.cursor },
-    TermCursor = { guifg = colors.foreground, guibg = colors.cursor },
-    TermCursorNC = { guifg = colors.foreground, guibg = colors.cursor },
-    Conceal = { guifg = colors.color4, guibg = colors.background },
-    Directory = { guifg = colors.color4 },
-    SpecialKey = { guifg = colors.color4 },
-    Title = { guifg = colors.color4 },
-    ErrorMsg = { guifg = colors.color1, guibg = colors.background },
-    Search = { guifg = colors.background, guibg = colors.color10 },
-    IncSearch = { guifg = colors.background, guibg = colors.color10 },
-    Substitute = { guifg = colors.color3, guibg = colors.color6 },
-    MoreMsg = { guifg = colors.color5 },
-    Question = { guifg = colors.color5 },
-    EndOfBuffer = { guifg = colors.background },
-    NonText = { guifg = colors.color1 },
-    Variable = { guifg = colors.color5 },
-    String = { guifg = colors.color2 },
-    Character = { guifg = colors.color12 },
-    Constant = { guifg = colors.color5 },
-    Number = { guifg = colors.color3 },
-    Boolean = { guifg = colors.color5 },
-    Float = { guifg = colors.color5 },
-    Identifier = { guifg = colors.color5 },
-    Function = { guifg = colors.color4 },
-    Operator = { guifg = colors.color6 },
-    Type = { guifg = colors.color5 },
-    StorageClass = { guifg = colors.color7 },
-    Structure = { guifg = colors.color6 },
-    Typedef = { guifg = colors.color6 },
-    Keyword = { guifg = colors.color5 },
-    Statement = { guifg = colors.color6 },
-    Conditional = { guifg = colors.color5 },
-    Repeat = { guifg = colors.color5 },
-    Label = { guifg = colors.color1 },
-    Exception = { guifg = colors.color9 },
-    Include = { guifg = colors.color5 },
-    PreProc = { guifg = colors.color4 },
-    Define = { guifg = colors.color4 },
-    Macro = { guifg = colors.color6 },
-    PreCondit = { guifg = colors.color6 },
-    Special = { guifg = colors.color6 },
-    SpecialChar = { guifg = colors.foreground },
-    Tag = { guifg = colors.color4 },
-    Debug = { guifg = colors.color1 },
-    Delimiter = { guifg = colors.foreground },
-    SpecialComment = { guifg = colors.comments },
-    Ignore = { guifg = colors.color7, guibg = colors.background },
-    Todo = { guifg = colors.color1, guibg = colors.background },
-    Error = { guifg = colors.color1, guibg = colors.background },
-    TabLine = { guifg = colors.color2, guibg = colors.contrast },
-    TabLineSel = { guifg = colors.foreground, guibg = colors.background },
-    TabLineFill = { guifg = colors.foreground, guibg = colors.background },
-    CmpDocumentationBorder = { guifg = colors.foreground, guibg = colors.background },
-    CmpItemAbbr = { guifg = colors.foreground, guibg = colors.background },
-    CmpItemAbbrDeprecated = { guifg = colors.color2, guibg = colors.background },
-    CmpItemAbbrMatch = { guifg = colors.color7, guibg = colors.background },
-    CmpItemAbbrMatchFuzzy = { guifg = colors.color7, guibg = colors.background },
-    CmpItemKind = { guifg = colors.color4, guibg = colors.background },
-    CmpItemMenu = { guifg = colors.color2, guibg = colors.background },
+    Normal = { foreground = colors.foreground, background = colors.background },
+    StatusLineNC = { background = colors.statusline_bg, foreground = colors.foreground },
+    StatusLine = { background = colors.statusline_bg, foreground = colors.foreground },
+    SignColumn = { background = colors.background, foreground = colors.background },
+    MsgArea = { foreground = colors.foreground, background = colors.background },
+    ModeMsg = { foreground = colors.foreground, background = colors.background },
+    MsgSeparator = { foreground = colors.foreground, background = colors.background },
+    SpellBad = { foreground = colors.color2 },
+    SpellCap = { foreground = colors.color6 },
+    SpellLocal = { foreground = colors.color4 },
+    SpellRare = { foreground = colors.color6 },
+    NormalNC = { foreground = colors.foreground, background = colors.background },
+    Pmenu = { foreground = colors.foreground, background = colors.background },
+    PmenuSel = { foreground = colors.background, background = colors.color4 },
+    WildMenu = { foreground = colors.color7, background = colors.color4 },
+    CursorLineNr = { foreground = colors.foreground },
+    Comment = { foreground = colors.comments },
+    Folded = { foreground = colors.color4, background = colors.background },
+    FoldColumn = { foreground = colors.color4, background = colors.background },
+    LineNr = { foreground = colors.color8, background = colors.background },
+    FloatBorder = { foreground = colors.background, background = colors.background },
+    Whitespace = { foreground = colors.color1 },
+    VertSplit = { foreground = colors.background, background = colors.color0 },
+    CursorLine = { background = colors.cursorline },
+    CursorColumn = { background = colors.background },
+    ColorColumn = { background = colors.background },
+    NormalFloat = { background = colors.background },
+    Visual = { background = colors.color0, foreground = colors.foreground },
+    VisualNOS = { background = colors.background },
+    WarningMsg = { foreground = colors.color3, background = colors.background },
+    DiffAdd = { background = colors.background, foreground = colors.color2 },
+    DiffChange = { background = colors.background, foreground = colors.color4 },
+    DiffDelete = { background = colors.background, foreground = colors.color1 },
+    QuickFixLine = { background = colors.color2 },
+    PmenuSbar = { background = colors.background },
+    PmenuThumb = { background = colors.color2 },
+    MatchParen = { foreground = colors.color4, background = colors.background },
+    Cursor = { foreground = colors.fomeground, background = colors.cursor },
+    lCursor = { foreground = colors.foreground, background = colors.cursor },
+    CursorIM = { foreground = colors.foreground, background = colors.cursor },
+    TermCursor = { foreground = colors.foreground, background = colors.cursor },
+    TermCursorNC = { foreground = colors.foreground, background = colors.cursor },
+    Conceal = { foreground = colors.color4, background = colors.background },
+    Directory = { foreground = colors.color4 },
+    SpecialKey = { foreground = colors.color4 },
+    Title = { foreground = colors.color4 },
+    ErrorMsg = { foreground = colors.color1, background = colors.background },
+    Search = { foreground = colors.background, background = colors.color10 },
+    IncSearch = { foreground = colors.background, background = colors.color10 },
+    Substitute = { foreground = colors.color3, background = colors.color6 },
+    MoreMsg = { foreground = colors.color5 },
+    Question = { foreground = colors.color5 },
+    EndOfBuffer = { foreground = colors.background },
+    NonText = { foreground = colors.color1 },
+    Variable = { foreground = colors.color5 },
+    String = { foreground = colors.color2 },
+    Character = { foreground = colors.color12 },
+    Constant = { foreground = colors.color5 },
+    Number = { foreground = colors.color3 },
+    Boolean = { foreground = colors.color5 },
+    Float = { foreground = colors.color5 },
+    Identifier = { foreground = colors.color5 },
+    Function = { foreground = colors.color4 },
+    Operator = { foreground = colors.color6 },
+    Type = { foreground = colors.color5 },
+    StorageClass = { foreground = colors.color7 },
+    Structure = { foreground = colors.color6 },
+    Typedef = { foreground = colors.color6 },
+    Keyword = { foreground = colors.color5 },
+    Statement = { foreground = colors.color6 },
+    Conditional = { foreground = colors.color5 },
+    Repeat = { foreground = colors.color5 },
+    Label = { foreground = colors.color1 },
+    Exception = { foreground = colors.color9 },
+    Include = { foreground = colors.color5 },
+    PreProc = { foreground = colors.color4 },
+    Define = { foreground = colors.color4 },
+    Macro = { foreground = colors.color6 },
+    PreCondit = { foreground = colors.color6 },
+    Special = { foreground = colors.color6 },
+    SpecialChar = { foreground = colors.foreground },
+    Tag = { foreground = colors.color4 },
+    Debug = { foreground = colors.color1 },
+    Delimiter = { foreground = colors.foreground },
+    SpecialComment = { foreground = colors.comments },
+    Ignore = { foreground = colors.color7, background = colors.background },
+    Todo = { foreground = colors.color1, background = colors.background },
+    Error = { foreground = colors.color1, background = colors.background },
+    TabLine = { foreground = colors.color2, background = colors.contrast },
+    TabLineSel = { foreground = colors.foreground, background = colors.background },
+    TabLineFill = { foreground = colors.foreground, background = colors.background },
+    CmpDocumentationBorder = { foreground = colors.foreground, background = colors.background },
+    CmpItemAbbr = { foreground = colors.foreground, background = colors.background },
+    CmpItemAbbrDeprecated = { foreground = colors.color2, background = colors.background },
+    CmpItemAbbrMatch = { foreground = colors.color7, background = colors.background },
+    CmpItemAbbrMatchFuzzy = { foreground = colors.color7, background = colors.background },
+    CmpItemKind = { foreground = colors.color4, background = colors.background },
+    CmpItemMenu = { foreground = colors.color2, background = colors.background },
 
     -- treesitter
 
@@ -114,51 +114,51 @@ M.highlights_base = function (colors)
     -- TSBoolean           = { };    -- For booleans.
     -- TSCharacter         = { };    -- For characters.
     -- TSComment           = { };    -- For color1 blocks.
-    TSNote = { guifg = colors.background, guibg = colors.color5 },
-    TSComment = { guifg = colors.comments },
-    TSWarning = { guifg = colors.background, guibg = colors.color5 },
-    TSDanger = { guifg = colors.background, guibg = colors.color3 },
-    TSConstructor = { guifg = colors.color10 }, -- For constructor calls and definitions: `= { }` in Lua, and Java constructors.
-    TSConditional       = { guifg = colors.color5 };    -- For keywords related to conditionnals.
-    TSConstant          = { guifg = colors.color1 };    -- For constants
-    TSConstBuiltin      = { guifg = colors.color1 };    -- For constant that are built in the language: `nil` in Lua.
-    TSConstMacro        = { guifg = colors.color1 };    -- For constants that are defined by macros: `NULL` in C.
+    TSNote = { foreground = colors.background, background = colors.color5 },
+    TSComment = { foreground = colors.comments },
+    TSWarning = { foreground = colors.background, background = colors.color5 },
+    TSDanger = { foreground = colors.background, background = colors.color3 },
+    TSConstructor = { foreground = colors.color10 }, -- For constructor calls and definitions: `= { }` in Lua, and Java constructors.
+    TSConditional       = { foreground = colors.color5 };    -- For keywords related to conditionnals.
+    TSConstant          = { foreground = colors.color1 };    -- For constants
+    TSConstBuiltin      = { foreground = colors.color1 };    -- For constant that are built in the language: `nil` in Lua.
+    TSConstMacro        = { foreground = colors.color1 };    -- For constants that are defined by macros: `NULL` in C.
     -- TSError             = { };    -- For syntax/parser errors.
     -- TSException         = { };    -- For exception related keywords.
-    TSField = { guifg = colors.color4 }, -- For fields.
+    TSField = { foreground = colors.color4 }, -- For fields.
     -- TSFloat             = { };    -- For floats.
-    TSFunction          = { guifg = colors.color4 };    -- For function (calls and definitions).
+    TSFunction          = { foreground = colors.color4 };    -- For function (calls and definitions).
     -- TSFuncBuiltin       = { };    -- For builtin functions: `table.insert` in Lua.
     -- TSFuncMacro         = { };    -- For macro defined fuctions (calls and definitions): each `macro_rules` in Rust.
     -- TSInclude           = { };    -- For includes: `#include` in C, `use` or `extern crate` in Rust, or `require` in Lua.
-    TSKeyword = { guifg = colors.color5 }, -- For keywords that don't fall in previous categories.
-    TSKeywordFunction = { guifg = colors.color5 }, -- For keywords used to define a fuction.
-    TSLabel = { guifg = colors.color7 }, -- For labels: `label:` in C and `:label:` in Lua.
+    TSKeyword = { foreground = colors.color5 }, -- For keywords that don't fall in previous categories.
+    TSKeywordFunction = { foreground = colors.color5 }, -- For keywords used to define a fuction.
+    TSLabel = { foreground = colors.color7 }, -- For labels: `label:` in C and `:label:` in Lua.
     -- TSMethod            = { };    -- For method calls and definitions.
     -- TSNamespace         = { };    -- For identifiers referring to modules and namespaces.
     -- TSNone              = { };    -- TODO: docs
-    TSNumber = { guifg = colors.color1 },
-    TSOperator = { guifg = colors.color7 }, -- For any operator: `+`, but also `->` and `*` in C.
-    TSParameter = { guifg = colors.color6 }, -- For parameters of a function.
+    TSNumber = { foreground = colors.color1 },
+    TSOperator = { foreground = colors.color7 }, -- For any operator: `+`, but also `->` and `*` in C.
+    TSParameter = { foreground = colors.color6 }, -- For parameters of a function.
     -- TSParameterReference= { };    -- For references to parameters of a function.
-    TSProperty = { guifg = colors.color7 }, -- Same as `TSField`.
-    TSPunctDelimiter = { guifg = colors.color7 }, -- For delimiters ie: `.`
-    TSPunctBracket = { guifg = colors.foreground }, -- For brackets and parens.
-    TSPunctSpecial = { guifg = colors.color7 }, -- For special punctutation that does not fall in the catagories before.
+    TSProperty = { foreground = colors.color7 }, -- Same as `TSField`.
+    TSPunctDelimiter = { foreground = colors.color7 }, -- For delimiters ie: `.`
+    TSPunctBracket = { foreground = colors.foreground }, -- For brackets and parens.
+    TSPunctSpecial = { foreground = colors.color7 }, -- For special punctutation that does not fall in the catagories before.
     -- TSRepeat            = { };    -- For keywords related to loops.
-    TSRepeat = { guifg = colors.color5 },
-    TSString = { guifg = colors.color2 },
-    TSStringRegex = { guifg = colors.color5 }, -- For regexes.
-    TSStringEscape = { guifg = colors.color5 }, -- For escape characters within a string.
+    TSRepeat = { foreground = colors.color5 },
+    TSString = { foreground = colors.color2 },
+    TSStringRegex = { foreground = colors.color5 }, -- For regexes.
+    TSStringEscape = { foreground = colors.color5 }, -- For escape characters within a string.
     -- TSSymbol            = { };    -- For identifiers referring to symbols or atoms.
     -- TSType              = { };    -- For types.
     -- TSTypeBuiltin       = { };    -- For builtin types.
-    TSVariableBuiltin = { guifg = colors.color3 }, -- Variable names that are defined by the languages, like `this` or `self`.
+    TSVariableBuiltin = { foreground = colors.color3 }, -- Variable names that are defined by the languages, like `this` or `self`.
 
-    TSTag               = { guifg = colors.color1 };    -- Tags like html tag names.
-    TSTagDelimiter      = { guifg = colors.foreground };    -- Tag delimiter like `<` `>` `/`
+    TSTag               = { foreground = colors.color1 };    -- Tags like html tag names.
+    TSTagDelimiter      = { foreground = colors.foreground };    -- Tag delimiter like `<` `>` `/`
     -- TSText              = { };    -- For strings considered text in a markup language.
-    TSTextReference = { guifg = colors.color6 },
+    TSTextReference = { foreground = colors.color6 },
     -- TSEmphasis          = { };    -- For text to be represented with emphasis.
     -- TSUnderline         = { };    -- For text to be represented with an underline.
     -- TSStrike            = { };    -- For strikethrough text.
@@ -167,94 +167,94 @@ M.highlights_base = function (colors)
     -- TSURI               = { };    -- Any URI like a link or email.
 
     -- LspTrouble
-    LspTroubleText = { guifg = colors.foreground },
-    LspTroubleCount = { guifg = colors.color6, guibg = colors.foreground },
-    LspTroubleNormal = { guifg = colors.foreground, guibg = colors.background },
+    LspTroubleText = { foreground = colors.foreground },
+    LspTroubleCount = { foreground = colors.color6, background = colors.foreground },
+    LspTroubleNormal = { foreground = colors.foreground, background = colors.background },
 
     -- Illuminate
-    illuminatedWord = { guibg = colors.foreground },
-    illuminatedCurWord = { guibg = colors.foreground },
+    illuminatedWord = { background = colors.foreground },
+    illuminatedCurWord = { background = colors.foreground },
 
     -- diff
-    diffAdded = { guifg = colors.color4 },
-    diffRemoved = { guifg = colors.color1 },
-    diffChanged = { guifg = colors.color5 },
-    diffOldFile = { guifg = colors.color5 },
-    diffNewFile = { guifg = colors.color5 },
-    diffFile = { guifg = colors.color7 },
-    diffLine = { guifg = colors.color1 },
-    diffIndexLine = { guifg = colors.color6 },
+    diffAdded = { foreground = colors.color4 },
+    diffRemoved = { foreground = colors.color1 },
+    diffChanged = { foreground = colors.color5 },
+    diffOldFile = { foreground = colors.color5 },
+    diffNewFile = { foreground = colors.color5 },
+    diffFile = { foreground = colors.color7 },
+    diffLine = { foreground = colors.color1 },
+    diffIndexLine = { foreground = colors.color6 },
 
    -- Neogit
-    NeogitBranch = { guifg = colors.color6 },
-    NeogitRemote = { guifg = colors.color6 },
-    NeogitHunkHeader = { guibg = colors.background, guifg = colors.foreground },
-    NeogitHunkHeaderHighlight = { guibg = colors.foreground, guifg = colors.color7 },
-    NeogitDiffContextHighlight = { guibg = colors.background, guifg = colors.foreground },
-    NeogitDiffDeleteHighlight = { guifg = colors.color1, guibg = colors.color1 },
-    NeogitDiffAddHighlight = { guifg = colors.color4, guibg = colors.color4 },
+    NeogitBranch = { foreground = colors.color6 },
+    NeogitRemote = { foreground = colors.color6 },
+    NeogitHunkHeader = { background = colors.background, foreground = colors.foreground },
+    NeogitHunkHeaderHighlight = { background = colors.foreground, foreground = colors.color7 },
+    NeogitDiffContextHighlight = { background = colors.background, foreground = colors.foreground },
+    NeogitDiffDeleteHighlight = { foreground = colors.color1, background = colors.color1 },
+    NeogitDiffAddHighlight = { foreground = colors.color4, background = colors.color4 },
 
     -- GitGutter
-    GitGutterAdd = { guifg = colors.color4 }, -- diff mode: Added line |diff.txt|
-    GitGutterChange = { guifg = colors.color5 }, -- diff mode: Changed line |diff.txt|
-    GitGutterDelete = { guifg = colors.color1 }, -- diff mode: Deleted line |diff.txt|
+    GitGutterAdd = { foreground = colors.color4 }, -- diff mode: Added line |diff.txt|
+    GitGutterChange = { foreground = colors.color5 }, -- diff mode: Changed line |diff.txt|
+    GitGutterDelete = { foreground = colors.color1 }, -- diff mode: Deleted line |diff.txt|
 
     -- GitSigns
-    GitSignsAdd = { guifg = colors.color4 }, -- diff mode: Added line |diff.txt|
-    GitSignsChange = { guifg = colors.color5 }, -- diff mode: Changed line |diff.txt|
-    GitSignsDelete = { guifg = colors.color1 }, -- diff mode: Deleted line |diff.txt|
+    GitSignsAdd = { foreground = colors.color4 }, -- diff mode: Added line |diff.txt|
+    GitSignsChange = { foreground = colors.color5 }, -- diff mode: Changed line |diff.txt|
+    GitSignsDelete = { foreground = colors.color1 }, -- diff mode: Deleted line |diff.txt|
 
     -- Telescope
-    TelescopeBorder = { guifg = colors.color0, guibg = colors.background },
-    TelescopeNormal = { guifg = colors.foreground, guibg = colors.background },
-    TelescopeSelection = { guifg = colors.background, guibg = colors.color2 },
+    TelescopeBorder = { foreground = colors.color0, background = colors.background },
+    TelescopeNormal = { foreground = colors.foreground, background = colors.background },
+    TelescopeSelection = { foreground = colors.background, background = colors.color2 },
 
     -- Indent Blank Line
-    IndentBlanklineChar = { guifg = colors.color0, guibg = colors.background },
+    IndentBlanklineChar = { foreground = colors.color0, background = colors.background },
 
     -- NvimTree
-    NvimTreeNormal = { guifg = colors.foreground, guibg = colors.background },
-    NvimTreeNormalNC = { guifg = colors.foreground, guibg = colors.background },
-    NvimTreeRootFolder = { guifg = colors.color1 },
-    NvimTreeGitDirty = { guifg = colors.color5 },
-    NvimTreeGitNew = { guifg = colors.color4 },
-    NvimTreeGitDeleted = { guifg = colors.color1 },
-    NvimTreeSpecialFile = { guifg = colors.color6 },
-    NvimTreeIndentMarker = { guifg = colors.color0 },
-    NvimTreeImageFile = { guifg = colors.foreground },
-    NvimTreeSymlink = { guifg = colors.color7 },
-    NvimTreeFolderIcon = { guifg = colors.color4 },
-    NvimTreeFolderName = { guifg = colors.foreground },
-    NvimTreeOpenedFolderName = { guifg = colors.color4 },
-    NvimTreeEmptyFolderName = { guifg = colors.color2 },
-    NvimTreeStatusLineNC = { guibg = colors.background, guifg = colors.background },
+    NvimTreeNormal = { foreground = colors.foreground, background = colors.background },
+    NvimTreeNormalNC = { foreground = colors.foreground, background = colors.background },
+    NvimTreeRootFolder = { foreground = colors.color1 },
+    NvimTreeGitDirty = { foreground = colors.color5 },
+    NvimTreeGitNew = { foreground = colors.color4 },
+    NvimTreeGitDeleted = { foreground = colors.color1 },
+    NvimTreeSpecialFile = { foreground = colors.color6 },
+    NvimTreeIndentMarker = { foreground = colors.color0 },
+    NvimTreeImageFile = { foreground = colors.foreground },
+    NvimTreeSymlink = { foreground = colors.color7 },
+    NvimTreeFolderIcon = { foreground = colors.color4 },
+    NvimTreeFolderName = { foreground = colors.foreground },
+    NvimTreeOpenedFolderName = { foreground = colors.color4 },
+    NvimTreeEmptyFolderName = { foreground = colors.color2 },
+    NvimTreeStatusLineNC = { background = colors.background, foreground = colors.background },
 
     -- LspSaga
-    LspFloatWinNormal = { guibg = colors.background },
-    LspFloatWinBorder = { guifg = colors.background },
-    LspSagaBorderTitle = { guifg = colors.color7 },
-    LspSagaHoverBorder = { guifg = colors.color7 },
-    LspSagaRenameBorder = { guifg = colors.color4 },
-    LspSagaDefPreviewBorder = { guifg = colors.color4 },
-    LspSagaCodeActionBorder = { guifg = colors.color7 },
-    LspSagaFinderSelection = { guifg = colors.color1 },
-    LspSagaCodeActionTitle = { guifg = colors.color7 },
-    LspSagaCodeActionContent = { guifg = colors.color6 },
-    LspSagaSignatureHelpBorder = { guifg = colors.color1 },
-    ReferencesCount = { guifg = colors.color6 },
-    DefinitionCount = { guifg = colors.color6 },
-    DefinitionIcon = { guifg = colors.color7 },
-    ReferencesIcon = { guifg = colors.color7 },
-    TargetWord = { guifg = colors.color7 },
+    LspFloatWinNormal = { background = colors.background },
+    LspFloatWinBorder = { foreground = colors.background },
+    LspSagaBorderTitle = { foreground = colors.color7 },
+    LspSagaHoverBorder = { foreground = colors.color7 },
+    LspSagaRenameBorder = { foreground = colors.color4 },
+    LspSagaDefPreviewBorder = { foreground = colors.color4 },
+    LspSagaCodeActionBorder = { foreground = colors.color7 },
+    LspSagaFinderSelection = { foreground = colors.color1 },
+    LspSagaCodeActionTitle = { foreground = colors.color7 },
+    LspSagaCodeActionContent = { foreground = colors.color6 },
+    LspSagaSignatureHelpBorder = { foreground = colors.color1 },
+    ReferencesCount = { foreground = colors.color6 },
+    DefinitionCount = { foreground = colors.color6 },
+    DefinitionIcon = { foreground = colors.color7 },
+    ReferencesIcon = { foreground = colors.color7 },
+    TargetWord = { foreground = colors.color7 },
 
     -- NeoVim
-    healthError = { guifg = colors.color1 },
-    healthSuccess = { guifg = colors.color4 },
-    healthWarning = { guifg = colors.color5 },
+    healthError = { foreground = colors.color1 },
+    healthSuccess = { foreground = colors.color4 },
+    healthWarning = { foreground = colors.color5 },
 
     -- BufferLine
-    BufferLineIndicatorSelected = { guifg = colors.color2 },
-    BufferLineFill = { guifg = colors.foreground, guibg = colors.contrast },
+    BufferLineIndicatorSelected = { foreground = colors.color2 },
+    BufferLineFill = { foreground = colors.foreground, background = colors.contrast },
   }
 end
 
