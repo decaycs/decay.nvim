@@ -96,6 +96,21 @@ require('decay').setup({
 })
 ```
 
+You can enable italics too!
+
+```lua
+require('decay').setup({
+  dark = true,
+  italics = {
+    code = true,
+    comments = false -- to disable italic comments, replace to true to enable
+  },
+  nvim_tree = {
+    contrast = true
+  }
+})
+```
+
 Or with vim script if u want (not able the posibility to disable tree contrast)
 
 ```vim

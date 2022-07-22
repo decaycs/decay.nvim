@@ -138,7 +138,7 @@ M.highlights_base = function (colors)
     -- TSNamespace         = { };    -- For identifiers referring to modules and namespaces.
     -- TSNone              = { };    -- TODO: docs
     TSNumber = { guifg = colors.color1 },
-    TSOperator = { guifg = colors.color7 }, -- For any operator: `+`, but also `->` and `*` in C.
+    TSOperator = { guifg = colors.color6 }, -- For any operator: `+`, but also `->` and `*` in C.
     TSParameter = { guifg = colors.color6 }, -- For parameters of a function.
     -- TSParameterReference= { };    -- For references to parameters of a function.
     TSProperty = { guifg = colors.color7 }, -- Same as `TSField`.

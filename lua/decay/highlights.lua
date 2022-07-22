@@ -9,11 +9,29 @@ function M.highlight_all(colors, opts)
   end
   local ntree = opts.nvim_tree or { contrast = false }
   if ntree.contrast == true then
-    hi('NvimTreeNormal', { guibg = colors.contrast })
-    hi('NvimTreeNormalNC', { guibg = colors.contrast })
-    hi('NvimTreeEndOfBuffer', { guibg = colors.contrast, guifg = colors.contrast })
-    hi('NvimTreeEndOfBufferNC', { guibg = colors.contrast, guifg = colors.contrast })
-    hi('NvimTreeVertSplit', { guifg = colors.background, guibg = colors.background })
+    hi('NvimTreeNormal', { guibg = colors.contrast }, false)
+    hi('NvimTreeNormalNC', { guibg = colors.contrast }, false)
+    hi('NvimTreeEndOfBuffer', { guibg = colors.contrast, guifg = colors.contrast }, false)
+    hi('NvimTreeEndOfBufferNC', { guibg = colors.contrast, guifg = colors.contrast }, false)
+    hi('NvimTreeVertSplit', { guifg = colors.background, guibg = colors.background }, false)
+  end
+  if opts.italics.code == true then
+    local tomkitalic = {
+      'TSKeyword', 'TSConditional',
+      'Keyword', 'TSKeywordFunction', 'Function',
+      'Repeat', 'TSRepeat',
+    }
+    for _, item in ipairs(tomkitalic) do
+      hi(item, { cterm = 'italic', gui = 'italic' }, false)
+    end
+  end
+  if opts.italics.comments == true then
+     local tomkitalic = {
+       'TSComment', 'Comment'
+     }
+     for _, item in ipairs(tomkitalic) do
+       hi(item, { cterm = 'italic', gui = 'italic' }, false)
+     end
   end
 end
 
