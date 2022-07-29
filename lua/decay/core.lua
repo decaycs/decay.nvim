@@ -1,5 +1,34 @@
 local M = {}
 
+local function get_decayce()
+  return {
+    background = "#0d0f18",
+    contrast = '#0b0d16',
+    statusline_bg = '#0f111a',
+    lighter = '#11131c',
+    foreground = "#a5b6cf",
+    cursorline = '#0f111a',
+    comments = '#1c1e27',
+    cursor = "#a5b6cf",
+    color0 = "#151720",
+    color1 = "#dd6777",
+    color2 = "#90ceaa",
+    color3 = "#ecd3a0",
+    color4 = "#86aaec",
+    color5 = "#c296eb",
+    color6 = "#93cee9",
+    color7 = "#cbced3",
+    color8 = "#1c1e27",
+    color9 = "#e26c7c",
+    color10 = "#95d3af",
+    color11 = "#f1d8a5",
+    color12 = "#8baff1",
+    color13 = "#c79bf0",
+    color14 = "#98d3ee",
+    color15 = "#d0d3d8",
+  }
+end
+
 local function get_darker_decay()
   return {
     background = "#101419",
@@ -87,17 +116,18 @@ local function get_light_decay()
   }
 end
 
-function M.get_colors(dark)
-  if vim.o.background == 'dark' then
-    dark = vim.g.decay_dark_mode or false
-    if dark then
-      return get_darker_decay()
-    else
-      return get_decay()
-    end
-  else
-    return get_light_decay()
-  end
+function M.get_colors(style)
+   if vim.o.background == 'dark' then
+      if style == 'dark' then
+         return get_darker_decay()
+      elseif style == 'decayce' then
+         return get_decayce()
+      else
+         return get_decay()
+      end
+   else
+      return get_light_decay()
+   end
 end
 
 return M

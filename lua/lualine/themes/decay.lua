@@ -1,5 +1,5 @@
 local core = require('decay.core')
-local colors = core.get_colors()
+local colors = core.get_colors(vim.g.decay_style)
 
 local decay = {}
 

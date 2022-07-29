@@ -54,7 +54,7 @@ if not present then
 end
 
 decay.setup({
-  dark = false,
+  style = 'normal',
   nvim_tree = {
     contrast = true, -- or false to disable tree contrast
   },
@@ -65,7 +65,7 @@ or if u want a more simple example:
 
 ```lua
 require('decay').setup({
-  dark = false,
+  style = 'normal',
   nvim_tree = {
     contrast = true, -- or false to disable tree contrast
   },
@@ -76,7 +76,7 @@ Or if you want you can try the darker palette! :3
 
 ```lua
 require('decay').setup({
-  dark = true,
+  style = 'dark',
   nvim_tree = {
     contrast = true -- or false to disable tree contrast,
   },
@@ -89,7 +89,7 @@ Or the light palette too :)
 vim.o.background = 'light'
 
 require('decay').setup({
-  dark = false, -- or true, the light theme will override this lol
+  style = 'normal', -- anyways will load the lighter palette, cuz `vim.o.background` is `light`
   nvim_tree = {
     contrast = true -- nvim tree contrast
   },
@@ -100,11 +100,22 @@ You can enable italics too!
 
 ```lua
 require('decay').setup({
-  dark = true,
+  style = 'normal',
   italics = {
     code = true,
     comments = false -- to disable italic comments, replace to true to enable
   },
+  nvim_tree = {
+    contrast = true
+  }
+})
+```
+
+Try the WIP (Work In Progress) decayce palette!
+
+```lua
+require('decay').setup({
+  style = 'decayce',
   nvim_tree = {
     contrast = true
   }
