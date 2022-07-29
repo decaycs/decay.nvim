@@ -118,7 +118,7 @@ M.highlights_base = function (colors)
     TSComment = { guifg = colors.comments },
     TSWarning = { guifg = colors.background, guibg = colors.color5 },
     TSDanger = { guifg = colors.background, guibg = colors.color3 },
-    TSConstructor = { guifg = colors.color10 }, -- For constructor calls and definitions: `= { }` in Lua, and Java constructors.
+    TSConstructor = { guifg = colors.color3 }, -- For constructor calls and definitions: `= { }` in Lua, and Java constructors.
     TSConditional       = { guifg = colors.color5 };    -- For keywords related to conditionnals.
     TSConstant          = { guifg = colors.color1 };    -- For constants
     TSConstBuiltin      = { guifg = colors.color1 };    -- For constant that are built in the language: `nil` in Lua.
@@ -141,7 +141,7 @@ M.highlights_base = function (colors)
     TSOperator = { guifg = colors.color6 }, -- For any operator: `+`, but also `->` and `*` in C.
     TSParameter = { guifg = colors.color6 }, -- For parameters of a function.
     -- TSParameterReference= { };    -- For references to parameters of a function.
-    TSProperty = { guifg = colors.color7 }, -- Same as `TSField`.
+    TSProperty = { guifg = colors.color4 }, -- Same as `TSField`.
     TSPunctDelimiter = { guifg = colors.color7 }, -- For delimiters ie: `.`
     TSPunctBracket = { guifg = colors.foreground }, -- For brackets and parens.
     TSPunctSpecial = { guifg = colors.color7 }, -- For special punctutation that does not fall in the catagories before.
