@@ -149,26 +149,25 @@ colorscheme decay
 
 ## Lualine
 
-This decay port has lualine integration, enable it! (if you use lualine lmao :D)
+If you use lualine, you can enable the colors with something like this:
 
 ```lua
 require('lualine').setup {
   options = {
     theme = 'decay',
-    -- <SNIP>
   },
-  -- <SNIP>
 }
 ```
 
 ## Getting the colors
 
-U can get the colors of decay using the decay-lua based api! Check at this :3
+You can get the colors of decay using the decay-lua based api! Check at this :3
 
 ```lua
-local colors = require('decay.core').get_colors(false) -- or true to get the darker palette
+local core = require 'decay.core'
 
-print(colors.background) -- will output #171B20 or #101419 if you're using the darker palette
+ -- style could be: normal, dark or decayce, if you want the lighter palette, just pass anyone but set the background to light before call this!
+local colors = core.get_colors(<style>)
+
+print(colors.background) -- shows the background of the selected palette!
 ```
-
-> If `background` is `light`, `decay.core.get_colors` will return the light decay palette
