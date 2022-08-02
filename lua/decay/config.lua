@@ -255,6 +255,12 @@ M.highlights_base = function (colors)
     -- BufferLine
     BufferLineIndicatorSelected = { guifg = colors.color2 },
     BufferLineFill = { guifg = colors.foreground, guibg = colors.contrast },
+
+    -- Diagnostics support
+    DiagnosticError = { guifg = colors.color1 }, -- red
+    DiagnosticWarn = { guifg = colors.color3 }, -- yellow
+    DiagnosticInfo = { guifg = colors.color4 }, -- blue
+    DiagnosticHint = { guifg = colors.color6 }, -- cyan
   }
 end
 
