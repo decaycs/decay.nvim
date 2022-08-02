@@ -96,6 +96,17 @@ require('decay').setup({
 })
 ```
 
+Or the colder decay palette: decayce:
+
+```lua
+require('decay').setup({
+  style = 'decayce',
+  nvim_tree = {
+    contrast = true
+  }
+})
+```
+
 You can enable italics too!
 
 ```lua
@@ -105,17 +116,6 @@ require('decay').setup({
     code = true,
     comments = false -- to disable italic comments, replace to true to enable
   },
-  nvim_tree = {
-    contrast = true
-  }
-})
-```
-
-Try the WIP (Work In Progress) decayce palette!
-
-```lua
-require('decay').setup({
-  style = 'decayce',
   nvim_tree = {
     contrast = true
   }
@@ -132,6 +132,12 @@ You can enable the darker palette too using vim script! :D
 
 ```vim
 colorscheme dark-decay
+```
+
+You can enable decayce using vim script too:
+
+```vim
+colorscheme decayce
 ```
 
 You can use the light palette too using vim script:

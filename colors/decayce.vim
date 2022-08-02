@@ -1,6 +1,6 @@
 lua << EOF
 require('decay').setup({
-  style = 'dark',
+  style = 'decayce',
   italics = {
     code = false,
     comments = false
