@@ -18,7 +18,7 @@ This is a port of [Decay Colorscheme](https://github.com/decaycs) for neovim usi
 - Git signs
 - Git gutter
 - Lualine
-- Ident-BlankLine
+- Indent-BlankLine
 
 ## Installation
 
