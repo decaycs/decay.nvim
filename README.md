@@ -147,6 +147,19 @@ set background=light
 colorscheme decay
 ```
 
+## Cmp.nvim
+
+By default the cmp.nvim integration has the kinds highlighted like blocks, u can disable that feature like this:
+
+```lua
+require('decay').setup {
+  cmp = {
+    block_kind = false,
+  },
+  -- SNIP
+}
+```
+
 ## Lualine
 
 If you use lualine, you can enable the colors with something like this:
