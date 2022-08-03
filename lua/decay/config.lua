@@ -14,8 +14,6 @@ M.highlights_base = function (colors)
     SpellLocal = { guifg = colors.color4 },
     SpellRare = { guifg = colors.color6 },
     NormalNC = { guifg = colors.foreground, guibg = colors.background },
-    Pmenu = { guifg = colors.foreground, guibg = colors.background },
-    PmenuSel = { guifg = colors.background, guibg = colors.color4 },
     WildMenu = { guifg = colors.color7, guibg = colors.color4 },
     CursorLineNr = { guifg = colors.foreground },
     Comment = { guifg = colors.comments },
@@ -36,8 +34,6 @@ M.highlights_base = function (colors)
     DiffChange = { guibg = colors.background, guifg = colors.color4 },
     DiffDelete = { guibg = colors.background, guifg = colors.color1 },
     QuickFixLine = { guibg = colors.color2 },
-    PmenuSbar = { guibg = colors.background },
-    PmenuThumb = { guibg = colors.color2 },
     MatchParen = { guifg = colors.color4, guibg = colors.background },
     Cursor = { guifg = colors.fomeground, guibg = colors.cursor },
     lCursor = { guifg = colors.foreground, guibg = colors.cursor },
@@ -93,13 +89,6 @@ M.highlights_base = function (colors)
     TabLine = { guifg = colors.color2, guibg = colors.contrast },
     TabLineSel = { guifg = colors.foreground, guibg = colors.background },
     TabLineFill = { guifg = colors.foreground, guibg = colors.background },
-    CmpDocumentationBorder = { guifg = colors.foreground, guibg = colors.background },
-    CmpItemAbbr = { guifg = colors.foreground, guibg = colors.background },
-    CmpItemAbbrDeprecated = { guifg = colors.color2, guibg = colors.background },
-    CmpItemAbbrMatch = { guifg = colors.color7, guibg = colors.background },
-    CmpItemAbbrMatchFuzzy = { guifg = colors.color7, guibg = colors.background },
-    CmpItemKind = { guifg = colors.color4, guibg = colors.background },
-    CmpItemMenu = { guifg = colors.color2, guibg = colors.background },
 
     -- treesitter
 

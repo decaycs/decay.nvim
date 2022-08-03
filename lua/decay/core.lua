@@ -48,13 +48,13 @@ local function get_darker_decay()
     color6 = "#74bee9",
     color7 = "#b6beca",
     color8 = "#485263",
-    color9 = "#e05f65",
-    color10 = "#7ddac5",
-    color11 = "#e9a180",
-    color12 = "#70a5eb",
-    color13 = "#c68aee",
-    color14 = "#74bee9",
-    color15 = "#b6beca",
+    color9 = "#e5646a",
+    color10 = "#94f7c5",
+    color11 = "#f6d48f",
+    color12 = "#75aaf0",
+    color13 = "#cb8ff3",
+    color14 = "#79c3ee",
+    color15 = "#e3e6eb",
   }
 end
 
@@ -77,13 +77,13 @@ local function get_decay()
     color6 = "#74bee9",
     color7 = "#b6beca",
     color8 = "#485263",
-    color9 = "#e05f65",
-    color10 = "#7ddac5",
-    color11 = "#f1cf8a",
-    color12 = "#70a5eb",
-    color13 = "#c68aee",
-    color14 = "#74bee9",
-    color15 = "#b6beca",
+    color9 = "#e5646a",
+    color10 = "#94F7C5",
+    color11 = "#f6d48f",
+    color12 = "#75aaf0",
+    color13 = "#cb8ff3",
+    color14 = "#79c3ee",
+    color15 = "#e3e6eb",
   }
 end
 
