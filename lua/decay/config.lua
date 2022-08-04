@@ -250,6 +250,12 @@ M.highlights_base = function (colors)
     DiagnosticWarn = { guifg = colors.color3 }, -- yellow
     DiagnosticInfo = { guifg = colors.color4 }, -- blue
     DiagnosticHint = { guifg = colors.color6 }, -- cyan
+    
+    -- Underline
+    DiagnosticUnderlineError = { gui = 'undercurl', guisp = colors.color1 }, -- red
+    DiagnosticUnderlineWarn = { gui = 'undercurl', guisp = colors.color3 }, -- yellow
+    DiagnosticUnderlineInfo = { gui = 'undercurl', guisp = colors.color4 }, -- blue
+    DiagnosticUnderlineHint = { gui = 'undercurl', guisp = colors.color6 }, -- cyan
   }
 end
 
