@@ -8,7 +8,7 @@ local function get_decayce()
     lighter = '#11131c',
     foreground = "#a5b6cf",
     cursorline = '#0f111a',
-    comments = '#1c1e27',
+    comments = '#2b2d36',
     cursor = "#a5b6cf",
     color0 = "#151720",
     color1 = "#dd6777",
