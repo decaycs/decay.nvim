@@ -33,7 +33,7 @@ function M.highlight_all(colors, opts)
        'TSComment', 'Comment'
      }
      for _, item in ipairs(tomkitalic) do
-       hi(item, { italic = true })
+       hi(item, { italic = true, fg = colors.comments })
      end
   end
   if vim.g.decay_cmp_block_kind then
