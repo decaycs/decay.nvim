@@ -6,7 +6,7 @@ local decay = {}
 decay.normal = {
   a = { bg = colors.color4, fg = colors.background },
   b = { bg = colors.lighter, fg = colors.foreground },
-  c = { bg = colors.statusline_bg, fg = colors.foreground },
+  c = { bg = colors.statusline_bg, fg = colors.statusline_bg },
 }
 
 decay.insert = {
