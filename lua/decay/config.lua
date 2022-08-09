@@ -22,7 +22,7 @@ M.highlights_base = function (colors)
     LineNr = { fg = colors.color8, bg = colors.background },
     FloatBorder = { fg = colors.background, bg = colors.background },
     Whitespace = { fg = colors.color1 },
-    VertSplit = { fg = colors.background, bg = colors.color0 },
+    VertSplit = { bg = colors.background, fg = colors.color0 },
     CursorLine = { bg = colors.cursorline },
     CursorColumn = { bg = colors.background },
     ColorColumn = { bg = colors.background },
