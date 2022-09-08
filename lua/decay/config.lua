@@ -1,6 +1,6 @@
 local M = {}
 
-M.highlights_base = function (colors)
+M.highlights_base = function (colors, opts)
   return {
     Normal = { fg = colors.foreground, bg = colors.background },
     StatusLineNC = { bg = colors.statusline_bg, fg = colors.foreground },
@@ -16,7 +16,7 @@ M.highlights_base = function (colors)
     NormalNC = { fg = colors.foreground, bg = colors.background },
     WildMenu = { fg = colors.color7, bg = colors.color4 },
     CursorLineNr = { fg = colors.foreground },
-    Comment = { fg = colors.comments },
+    Comment = { fg = colors.comments, italic = opts.italics.comments },
     Folded = { fg = colors.color4, bg = colors.background },
     FoldColumn = { fg = colors.color4, bg = colors.background },
     LineNr = { fg = colors.color8, bg = colors.background },
@@ -66,10 +66,10 @@ M.highlights_base = function (colors)
     StorageClass = { fg = colors.color7 },
     Structure = { fg = colors.color6 },
     Typedef = { fg = colors.color6 },
-    Keyword = { fg = colors.color5 },
+    Keyword = { fg = colors.color5, italic = opts.italics.code },
     Statement = { fg = colors.color6 },
     Conditional = { fg = colors.color5 },
-    Repeat = { fg = colors.color5 },
+    Repeat = { fg = colors.color5, italic = opts.italics.code },
     Label = { fg = colors.color1 },
     Exception = { fg = colors.color9 },
     Include = { fg = colors.color5 },
@@ -104,11 +104,11 @@ M.highlights_base = function (colors)
     -- TSCharacter         = { };    -- For characters.
     -- TSComment           = { };    -- For color1 blocks.
     TSNote = { fg = colors.background, bg = colors.color5 },
-    TSComment = { fg = colors.comments },
+    TSComment = { fg = colors.comments, italic = opts.italics.comments },
     TSWarning = { fg = colors.background, bg = colors.color5 },
     TSDanger = { fg = colors.background, bg = colors.color3 },
     TSConstructor = { fg = colors.color3 }, -- For constructor calls and definitions: `= { }` in Lua, and Java constructors.
-    TSConditional       = { fg = colors.color5 };    -- For keywords related to conditionnals.
+    TSConditional       = { fg = colors.color5, italic = opts.italics.code };    -- For keywords related to conditionnals.
     TSConstant          = { fg = colors.color1 };    -- For constants
     TSConstBuiltin      = { fg = colors.color1 };    -- For constant that are built in the language: `nil` in Lua.
     TSConstMacro        = { fg = colors.color1 };    -- For constants that are defined by macros: `NULL` in C.
@@ -120,8 +120,8 @@ M.highlights_base = function (colors)
     -- TSFuncBuiltin       = { };    -- For builtin functions: `table.insert` in Lua.
     -- TSFuncMacro         = { };    -- For macro defined fuctions (calls and definitions): each `macro_rules` in Rust.
     -- TSInclude           = { };    -- For includes: `#include` in C, `use` or `extern crate` in Rust, or `require` in Lua.
-    TSKeyword = { fg = colors.color5 }, -- For keywords that don't fall in previous categories.
-    TSKeywordFunction = { fg = colors.color5 }, -- For keywords used to define a fuction.
+    TSKeyword = { fg = colors.color5, italic = opts.italics.code }, -- For keywords that don't fall in previous categories.
+    TSKeywordFunction = { fg = colors.color5, italic = opts.italics.code }, -- For keywords used to define a fuction.
     TSLabel = { fg = colors.color7 }, -- For labels: `label:` in C and `:label:` in Lua.
     -- TSMethod            = { };    -- For method calls and definitions.
     -- TSNamespace         = { };    -- For identifiers referring to modules and namespaces.
@@ -135,7 +135,7 @@ M.highlights_base = function (colors)
     TSPunctBracket = { fg = colors.foreground }, -- For brackets and parens.
     TSPunctSpecial = { fg = colors.color7 }, -- For special punctutation that does not fall in the catagories before.
     -- TSRepeat            = { };    -- For keywords related to loops.
-    TSRepeat = { fg = colors.color5 },
+    TSRepeat = { fg = colors.color5, italic = opts.italics.code },
     TSString = { fg = colors.color2 },
     TSStringRegex = { fg = colors.color5 }, -- For regexes.
     TSStringEscape = { fg = colors.color5 }, -- For escape characters within a string.
