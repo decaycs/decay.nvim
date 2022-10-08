@@ -245,6 +245,12 @@ M.highlights_base = function (colors, opts)
     BufferLineIndicatorSelected = { fg = colors.color2 },
     BufferLineFill = { fg = colors.foreground, bg = colors.contrast },
 
+   -- Barbar
+   BufferCurrentSign = { fg = colors.blue, bg = colors.blue },
+   BufferInactiveSign = { fg = colors.background, bg = colors.background },
+   BufferOffset = { fg = colors.background, bg = colors.background },
+   BufferTabpageFill = { fg = colors.background, bg = colors.background },
+
     -- Diagnostics support
     DiagnosticError = { fg = colors.color1 }, -- red
     DiagnosticWarn = { fg = colors.color3 }, -- yellow
