@@ -200,6 +200,8 @@ M.highlights_base = function (colors, opts)
 
     -- Indent Blank Line
     IndentBlanklineChar = { fg = colors.color0, bg = 'NONE' },
+    IndentBlanklineContextChar = { fg = colors.comments, bg = 'NONE' },
+    IndentBlanklineContextStart = { sp = colors.comments, underline = true, bg = 'NONE' },
 
     -- NvimTree
     NvimTreeNormal = { fg = colors.foreground, bg = colors.background },
