@@ -3,8 +3,8 @@ local M = {}
 M.highlights_base = function (colors, opts)
   return {
     Normal = { fg = colors.foreground, bg = colors.background },
-    StatusLineNC = { bg = colors.statusline_bg, fg = colors.foreground },
     StatusLine = { bg = colors.statusline_bg, fg = colors.foreground },
+    StatusLineNC = { bg = colors.statusline_bg, fg = colors.color7 }, -- note that if `StatusLineNC` is equal to `StatusLine`, nvim will use '^' in the status-line of the current window
     SignColumn = { bg = colors.background, fg = colors.background },
     MsgArea = { fg = colors.foreground, bg = colors.background },
     ModeMsg = { fg = colors.foreground, bg = colors.background },
