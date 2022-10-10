@@ -7,7 +7,7 @@ local function get_decayce()
     statusline_bg = '#0f111a',
     lighter = '#11131c',
     foreground = "#a5b6cf",
-    cursorline = '#151720',
+    cursorline = '#11131c',
     comments = '#2b2d36',
     cursor = "#a5b6cf",
     color0 = "#151720",
