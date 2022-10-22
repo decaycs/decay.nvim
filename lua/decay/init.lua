@@ -7,7 +7,7 @@ function M.setup (opts)
     opts = {
       style = 'normal',
       cmp = {
-        block_kind = true,
+        block_kind = false,
       },
       italics = {
         code = true,
@@ -20,7 +20,7 @@ function M.setup (opts)
   vim.opt.termguicolors = true
   vim.g.decay_style = opts.style
 
-  local cmp_opts = opts.cmp or { block_kind = true }
+  local cmp_opts = opts.cmp or { block_kind = false }
 
   vim.g.decay_cmp_block_kind = cmp_opts.block_kind == nil and true or cmp_opts.block_kind
 
