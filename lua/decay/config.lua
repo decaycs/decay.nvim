@@ -63,7 +63,7 @@ M.highlights_base = function (colors, opts)
     Function = { fg = colors.color4 },
     Operator = { fg = colors.color6 },
     Type = { fg = colors.color5 },
-    StorageClass = { fg = colors.color7 },
+    StorageClass = { fg = colors.color5 },
     Structure = { fg = colors.color6 },
     Typedef = { fg = colors.color6 },
     Keyword = { fg = colors.color5, italic = opts.italics.code },
@@ -91,133 +91,135 @@ M.highlights_base = function (colors, opts)
     TabLineFill = { fg = colors.foreground, bg = colors.background },
 
     -- Treesitter
-		["@comment"] = { fg = colors.comments },
-		["@error"] = { fg = colors.color1 },
-		["@preproc"] = { fg = colors.color5 }, -- various preprocessor directives & shebangs
-		["@define"] = { fg = colors.color5 }, -- preprocessor definition directives
-		["@operator"] = { fg = colors.color6 }, -- For any operator: +, but also -> and * in cp.
+    ["@comment"] = { fg = colors.comments },
+    ["@error"] = { fg = colors.color1 },
+    ["@preproc"] = { fg = colors.color5 }, -- various preprocessor directives & shebangs
+    ["@define"] = { fg = colors.color5 }, -- preprocessor definition directives
+    ["@operator"] = { fg = colors.color6 }, -- For any operator: +, but also -> and * in cp.
 
-		-- Punctuation
-		["@punctuation.delimiter"] = { fg = colors.color6 }, -- For delimiters ie: .
-		["@punctuation.bracket"] = { fg = colors.color6 }, -- For brackets and parenthesis.
-		["@punctuation.special"] = { fg = colors.color6 }, -- For special punctutation that does not fall in the catagories before.
+    -- Punctuation
+    ["@punctuation.delimiter"] = { fg = colors.color6 }, -- For delimiters ie: .
+    ["@punctuation.bracket"] = { fg = colors.color6 }, -- For brackets and parenthesis.
+    ["@punctuation.special"] = { fg = colors.color6 }, -- For special punctutation that does not fall in the catagories before.
 
-		-- Literals
-		["@string"] = { fg = colors.color2 }, -- For strings.
-		["@string.regex"] = { fg = colors.color3 }, -- For regexes.
-		["@string.escape"] = { fg = colors.color3 }, -- For escape characters within a string.
-		["@string.special"] = { fg = colors.color2 }, -- other special strings (e.g. dates)
+    -- Literals
+    ["@string"] = { fg = colors.color2 }, -- For strings.
+    ["@string.regex"] = { fg = colors.color3 }, -- For regexes.
+    ["@string.escape"] = { fg = colors.color3 }, -- For escape characters within a string.
+    ["@string.special"] = { fg = colors.color2 }, -- other special strings (e.g. dates)
 
-		["@character"] = { fg = colors.color4 }, -- character literals
-		["@character.special"] = { fg = colors.color4 }, -- special characters (e.g. wildcards)
+    ["@character"] = { fg = colors.color4 }, -- character literals
+    ["@character.special"] = { fg = colors.color4 }, -- special characters (e.g. wildcards)
 
-		["@boolean"] = { fg = colors.color5 }, -- For booleans.
-		["@number"] = { fg = colors.color1 }, -- For all numbers
-		["@float"] = { fg = colors.color1 }, -- For floats.
+    ["@boolean"] = { fg = colors.color5 }, -- For booleans.
+    ["@number"] = { fg = colors.color1 }, -- For all numbers
+    ["@float"] = { fg = colors.color1 }, -- For floats.
 
-		-- Functions
-		["@function"] = { fg = colors.color4 }, -- For function (calls and definitions).
-		["@function.builtin"] = { fg = colors.color4 }, -- For builtin functions: table.insert in Lua.
-		["@function.call"] = { fg = colors.color4 }, -- function calls
-		["@function.macro"] = { fg = colors.color6 }, -- For macro defined functions (calls and definitions): each macro_rules in Ruscp.
-		["@method"] = { fg = colors.color4 }, -- For method calls and definitions.
+    -- Functions
+    ["@function"] = { fg = colors.color4 }, -- For function (calls and definitions).
+    ["@function.builtin"] = { fg = colors.color4 }, -- For builtin functions: table.insert in Lua.
+    ["@function.call"] = { fg = colors.color4 }, -- function calls
+    ["@function.macro"] = { fg = colors.color6 }, -- For macro defined functions (calls and definitions): each macro_rules in Ruscp.
+    ["@method"] = { fg = colors.color4 }, -- For method calls and definitions.
 
-		["@method.call"] = { fg = colors.color4 }, -- method calls
+    ["@method.call"] = { fg = colors.color4 }, -- method calls
 
-		["@constructor"] = { fg = colors.color3 }, -- For constructor calls and definitions: = { } in Lua, and Java constructors.
-		["@parameter"] = { fg = colors.color6 }, -- For parameters of a function.
+    ["@constructor"] = { fg = colors.color3 }, -- For constructor calls and definitions: = { } in Lua, and Java constructors.
+    ["@parameter"] = { fg = colors.color6 }, -- For parameters of a function.
 
-		-- Keywords
-		["@keyword"] = { fg = colors.color5 }, -- For keywords that don't fall in previous categories.
-		["@keyword.function"] = { fg = colors.color5 }, -- For keywords used to define a fuction.
-		["@keyword.operator"] = { fg = colors.color5 }, -- For new keyword operator
-		["@keyword.return"] = { fg = colors.color5 },
+    -- Keywords
+    ["@keyword"] = { fg = colors.color5 }, -- For keywords that don't fall in previous categories.
+    ["@keyword.function"] = { fg = colors.color5 }, -- For keywords used to define a fuction.
+    ["@keyword.operator"] = { fg = colors.color5 }, -- For new keyword operator
+    ["@keyword.return"] = { fg = colors.color5 },
 
-		["@conditional"] = { fg = colors.color5 }, -- For keywords related to conditionnals.
-		["@repeat"] = { fg = colors.color5 }, -- For keywords related to loops.
-		-- @debug            ; keywords related to debugging
-		["@label"] = { fg = colors.color5 }, -- For labels: label: in C and :label: in Lua.
-		["@include"] = { fg = colors.color5 }, -- For includes: #include in C, use or extern crate in Rust, or require in Lua.
-		["@exception"] = { fg = colors.color1 }, -- For exception related keywords.
+    ["@conditional"] = { fg = colors.color5 }, -- For keywords related to conditionnals.
+    ["@repeat"] = { fg = colors.color5 }, -- For keywords related to loops.
+    -- @debug            ; keywords related to debugging
+    ["@label"] = { fg = colors.color5 }, -- For labels: label: in C and :label: in Lua.
+    ["@include"] = { fg = colors.color5 }, -- For includes: #include in C, use or extern crate in Rust, or require in Lua.
+    ["@exception"] = { fg = colors.color1 }, -- For exception related keywords.
 
-		-- Types
+    -- Types
 
-		["@type"] = { fg = colors.color3 }, -- For types.
-		["@type.builtin"] = { fg = colors.color3 }, -- For builtin types.
-		["@type.definition"] = { fg = colors.color6 }, -- type definitions (e.g. `typedef` in C)
-		["@type.qualifier"] = { fg = colors.color5 }, -- type qualifiers (e.g. `const`)
+    ["@type"] = { fg = colors.color3 }, -- For types.
+    ["@type.builtin"] = { fg = colors.color3 }, -- For builtin types.
+    ["@type.definition"] = { fg = colors.color6 }, -- type definitions (e.g. `typedef` in C)
+    ["@type.qualifier"] = { fg = colors.color5 }, -- type qualifiers (e.g. `const`)
 
-		["@storageclass"] = { fg = colors.color3 }, -- visibility/life-time/etc. modifiers (e.g. `static`)
-		["@attribute"] = { fg = colors.color4 }, -- attribute annotations (e.g. Python decorators)
-		["@field"] = { fg = colors.color6 }, -- For fields.
-		["@property"] = { fg = colors.color6 }, -- Same as TSField.
+    ["@storageclass"] = { fg = colors.color3 }, -- visibility/life-time/etc. modifiers (e.g. `static`)
+    ["@attribute"] = { fg = colors.color4 }, -- attribute annotations (e.g. Python decorators)
+    ["@field"] = { fg = colors.color6 }, -- For fields.
+    ["@property"] = { fg = colors.color6 }, -- Same as TSField.
 
-		-- Identifiers
+    -- Identifiers
 
-		["@variable"] = { fg = colors.foreground }, -- Any variable name that does not have another highlighcp.
-		["@variable.builtin"] = { fg = colors.color3 }, -- Variable names that are defined by the languages, like this or self.
+    ["@variable"] = { fg = colors.foreground }, -- Any variable name that does not have another highlighcp.
+    ["@variable.builtin"] = { fg = colors.color3 }, -- Variable names that are defined by the languages, like this or self.
 
-		["@constant"] = { fg = colors.color3 }, -- For constants
-		["@constant.builtin"] = { fg = colors.color3 }, -- For constant that are built in the language: nil in Lua.
-		["@constant.macro"] = { fg = colors.color1 }, -- For constants that are defined by macros: NULL in cp.
+    ["@constant"] = { fg = colors.color3 }, -- For constants
+    ["@constant.builtin"] = { fg = colors.color3 }, -- For constant that are built in the language: nil in Lua.
+    ["@constant.macro"] = { fg = colors.color1 }, -- For constants that are defined by macros: NULL in cp.
 
-		["@namespace"] = { fg = colors.color5 }, -- For identifiers referring to modules and namespaces.
-		["@symbol"] = { fg = colors.color5 },
+    ["@namespace"] = { fg = colors.color5 }, -- For identifiers referring to modules and namespaces.
+    ["@symbol"] = { fg = colors.color5 },
 
-		-- Text
+    -- Text
 
-		["@text"] = { fg = colors.foreground }, -- For strings considerated text in a markup language.
-		["@text.strong"] = { fg = colors.foreground, bold = true }, -- italic
-		["@text.underline"] = { sp = colors.foreground, undercurl = true }, -- underlined text
-		["@text.strike"] = { fg = colors.foreground }, -- strikethrough text
-		["@text.title"] = { fg = colors.color4 }, -- titles like: # Example
-		["@text.uri"] = { fg = colors.color6, undercurl = true }, -- urls, links and emails
-		["@text.math"] = { fg = colors.color4 }, -- math environments (e.g. `$ ... $` in LaTeX)
-		["@text.environment"] = { fg = colors.color5 }, -- text environments of markup languages
-		["@text.environment.name"] = { fg = colors.color4 }, -- text indicating the type of an environment
-		["@text.reference"] = { fg = colors.color5 }, -- references
+    ["@text"] = { fg = colors.foreground }, -- For strings considerated text in a markup language.
+    ["@text.strong"] = { fg = colors.foreground, bold = true }, -- italic
+    ["@text.emphasis"] = { fg = colors.color6 },
+    ["@text.underline"] = { sp = colors.foreground, undercurl = true }, -- underlined text
+    ["@text.strike"] = { fg = colors.foreground }, -- strikethrough text
+    ["@text.title"] = { fg = colors.color4 }, -- titles like: # Example
+    ["@text.literal"] = { fg = colors.color6 },
+    ["@text.uri"] = { fg = colors.color6, undercurl = true }, -- urls, links and emails
+    ["@text.math"] = { fg = colors.color4 }, -- math environments (e.g. `$ ... $` in LaTeX)
+    ["@text.environment"] = { fg = colors.color5 }, -- text environments of markup languages
+    ["@text.environment.name"] = { fg = colors.color4 }, -- text indicating the type of an environment
+    ["@text.reference"] = { fg = colors.color5 }, -- references
 
-		["@text.todo"] = { bg = colors.color3 }, -- todo notes
-		["@text.note"] = { fg = colors.background, bg = colors.color5 },
-		["@text.warning"] = { fg = colors.background, bg = colors.color3 },
-		["@text.danger"] = { fg = colors.background, bg = colors.color1 },
+    ["@text.todo"] = { bg = colors.color3 }, -- todo notes
+    ["@text.note"] = { fg = colors.background, bg = colors.color5 },
+    ["@text.warning"] = { fg = colors.background, bg = colors.color3 },
+    ["@text.danger"] = { fg = colors.background, bg = colors.color1 },
 
-		["@text.diff.add"] = { fg = colors.color2 }, -- added text (for diff files)
-		["@text.diff.delete"] = { fg = colors.color1 }, -- deleted text (for diff files)
+    ["@text.diff.add"] = { fg = colors.color2 }, -- added text (for diff files)
+    ["@text.diff.delete"] = { fg = colors.color1 }, -- deleted text (for diff files)
 
-		-- Tags
-		["@tag"] = { fg = colors.color1 }, -- Tags like html tag names.
-		["@tag.attribute"] = { fg = colors.color4 }, -- Tags like html tag names.
-		["@tag.delimiter"] = { fg = colors.foreground }, -- Tag delimiter like < > /
+    -- Tags
+    ["@tag"] = { fg = colors.color1 }, -- Tags like html tag names.
+    ["@tag.attribute"] = { fg = colors.color4 }, -- Tags like html tag names.
+    ["@tag.delimiter"] = { fg = colors.foreground }, -- Tag delimiter like < > /
 
-		-- Language specific:
+    -- Language specific:
 
-		-- toml
-		["@property.toml"] = { fg = colors.color4 }, -- Differentiates between string and properties
+    -- toml
+    ["@property.toml"] = { fg = colors.color4 }, -- Differentiates between string and properties
 
-		-- json
-		["@label.json"] = { fg = colors.color4 }, -- For labels: label: in C and :label: in Lua.
+    -- json
+    ["@label.json"] = { fg = colors.color4 }, -- For labels: label: in C and :label: in Lua.
 
-		-- lua
-		["@field.lua"] = { fg = colors.color6 },
-		["@constructor.lua"] = { fg = colors.color4 }, -- For constructor calls and definitions: = { } in Lua, and Java constructors.
+    -- lua
+    ["@field.lua"] = { fg = colors.color6 },
+    ["@constructor.lua"] = { fg = colors.color4 }, -- For constructor calls and definitions: = { } in Lua, and Java constructors.
 
-		-- typescript
-		["@constructor.typescript"] = { fg = colors.color3 },
+    -- typescript
+    ["@constructor.typescript"] = { fg = colors.color3 },
 
-		-- TSX (Typescript React)
-		["@keyword.export"] = { fg = colors.color5 },
-		["@constructor.tsx"] = { fg = colors.color3 },
-		["@tag.attribute.tsx"] = { fg = colors.color5 },
+    -- TSX (Typescript React)
+    ["@keyword.export"] = { fg = colors.color5 },
+    ["@constructor.tsx"] = { fg = colors.color3 },
+    ["@tag.attribute.tsx"] = { fg = colors.color5 },
 
-		-- cpp
-		["@property.cpp"] = { fg = colors.color5 },
+    -- cpp
+    ["@property.cpp"] = { fg = colors.color5 },
 
-		-- yaml
-		["@field.yaml"] = { fg = colors.color4 }, -- For fields.
+    -- yaml
+    ["@field.yaml"] = { fg = colors.color4 }, -- For fields.
 
-		-- Ruby
-		["@symbol.ruby"] = { fg = colors.color1 },
+    -- Ruby
+    ["@symbol.ruby"] = { fg = colors.color1 },
 
     -- LspTrouble
     LspTroubleText = { fg = colors.foreground },
