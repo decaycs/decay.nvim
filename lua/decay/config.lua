@@ -90,70 +90,134 @@ M.highlights_base = function (colors, opts)
     TabLineSel = { fg = colors.foreground, bg = colors.background },
     TabLineFill = { fg = colors.foreground, bg = colors.background },
 
-    -- treesitter
+    -- Treesitter
+		["@comment"] = { fg = colors.comments },
+		["@error"] = { fg = colors.color1 },
+		["@preproc"] = { fg = colors.color5 }, -- various preprocessor directives & shebangs
+		["@define"] = { fg = colors.color5 }, -- preprocessor definition directives
+		["@operator"] = { fg = colors.color6 }, -- For any operator: +, but also -> and * in cp.
 
-    -- These groups are for the neovim tree-sitter highlights.
-    -- As of writing, tree-sitter support is a WIP, group names may color5.
-    -- By default, most of these groups link to an appropriate Vim group,
-    -- TSError -> Error for example, so you do not have to define these unless
-    -- you explicitly want to support Treesitter's improved syntax awareness.
+		-- Punctuation
+		["@punctuation.delimiter"] = { fg = colors.color6 }, -- For delimiters ie: .
+		["@punctuation.bracket"] = { fg = colors.color6 }, -- For brackets and parenthesis.
+		["@punctuation.special"] = { fg = colors.color6 }, -- For special punctutation that does not fall in the catagories before.
 
-    -- TSAnnotation        = { };    -- For C++/Dart attributes, annotations that can be attached to the code to denote some kind of meta information.
-    -- TSAttribute         = { };    -- (unstable) TODO: docs
-    -- TSBoolean           = { };    -- For booleans.
-    -- TSCharacter         = { };    -- For characters.
-    -- TSComment           = { };    -- For color1 blocks.
-    TSNote = { fg = colors.background, bg = colors.color5 },
-    TSComment = { fg = colors.comments, italic = opts.italics.comments },
-    TSWarning = { fg = colors.background, bg = colors.color5 },
-    TSDanger = { fg = colors.background, bg = colors.color3 },
-    TSConstructor = { fg = colors.color3 }, -- For constructor calls and definitions: `= { }` in Lua, and Java constructors.
-    TSConditional       = { fg = colors.color5, italic = opts.italics.code };    -- For keywords related to conditionnals.
-    TSConstant          = { fg = colors.color1 };    -- For constants
-    TSConstBuiltin      = { fg = colors.color1 };    -- For constant that are built in the language: `nil` in Lua.
-    TSConstMacro        = { fg = colors.color1 };    -- For constants that are defined by macros: `NULL` in C.
-    -- TSError             = { };    -- For syntax/parser errors.
-    -- TSException         = { };    -- For exception related keywords.
-    TSField = { fg = colors.color4 }, -- For fields.
-    -- TSFloat             = { };    -- For floats.
-    TSFunction          = { fg = colors.color4 };    -- For function (calls and definitions).
-    -- TSFuncBuiltin       = { };    -- For builtin functions: `table.insert` in Lua.
-    -- TSFuncMacro         = { };    -- For macro defined fuctions (calls and definitions): each `macro_rules` in Rust.
-    -- TSInclude           = { };    -- For includes: `#include` in C, `use` or `extern crate` in Rust, or `require` in Lua.
-    TSKeyword = { fg = colors.color5, italic = opts.italics.code }, -- For keywords that don't fall in previous categories.
-    TSKeywordFunction = { fg = colors.color5, italic = opts.italics.code }, -- For keywords used to define a fuction.
-    TSLabel = { fg = colors.color7 }, -- For labels: `label:` in C and `:label:` in Lua.
-    -- TSMethod            = { };    -- For method calls and definitions.
-    -- TSNamespace         = { };    -- For identifiers referring to modules and namespaces.
-    -- TSNone              = { };    -- TODO: docs
-    TSNumber = { fg = colors.color1 },
-    TSOperator = { fg = colors.color6 }, -- For any operator: `+`, but also `->` and `*` in C.
-    TSParameter = { fg = colors.color6 }, -- For parameters of a function.
-    -- TSParameterReference= { };    -- For references to parameters of a function.
-    TSProperty = { fg = colors.color4 }, -- Same as `TSField`.
-    TSPunctDelimiter = { fg = colors.color7 }, -- For delimiters ie: `.`
-    TSPunctBracket = { fg = colors.foreground }, -- For brackets and parens.
-    TSPunctSpecial = { fg = colors.color7 }, -- For special punctutation that does not fall in the catagories before.
-    -- TSRepeat            = { };    -- For keywords related to loops.
-    TSRepeat = { fg = colors.color5, italic = opts.italics.code },
-    TSString = { fg = colors.color2 },
-    TSStringRegex = { fg = colors.color5 }, -- For regexes.
-    TSStringEscape = { fg = colors.color5 }, -- For escape characters within a string.
-    -- TSSymbol            = { };    -- For identifiers referring to symbols or atoms.
-    -- TSType              = { };    -- For types.
-    -- TSTypeBuiltin       = { };    -- For builtin types.
-    TSVariableBuiltin = { fg = colors.color3 }, -- Variable names that are defined by the languages, like `this` or `self`.
+		-- Literals
+		["@string"] = { fg = colors.color2 }, -- For strings.
+		["@string.regex"] = { fg = colors.color3 }, -- For regexes.
+		["@string.escape"] = { fg = colors.color3 }, -- For escape characters within a string.
+		["@string.special"] = { fg = colors.color2 }, -- other special strings (e.g. dates)
 
-    TSTag               = { fg = colors.color1 };    -- Tags like html tag names.
-    TSTagDelimiter      = { fg = colors.foreground };    -- Tag delimiter like `<` `>` `/`
-    -- TSText              = { };    -- For strings considered text in a markup language.
-    TSTextReference = { fg = colors.color6 },
-    -- TSEmphasis          = { };    -- For text to be represented with emphasis.
-    -- TSUnderline         = { };    -- For text to be represented with an underline.
-    -- TSStrike            = { };    -- For strikethrough text.
-    -- TSTitle             = { };    -- Text that is part of a title.
-    -- TSLiteral           = { };    -- Literal text.
-    -- TSURI               = { };    -- Any URI like a link or email.
+		["@character"] = { fg = colors.color4 }, -- character literals
+		["@character.special"] = { fg = colors.color4 }, -- special characters (e.g. wildcards)
+
+		["@boolean"] = { fg = colors.color5 }, -- For booleans.
+		["@number"] = { fg = colors.color1 }, -- For all numbers
+		["@float"] = { fg = colors.color1 }, -- For floats.
+
+		-- Functions
+		["@function"] = { fg = colors.color4 }, -- For function (calls and definitions).
+		["@function.builtin"] = { fg = colors.color4 }, -- For builtin functions: table.insert in Lua.
+		["@function.call"] = { fg = colors.color4 }, -- function calls
+		["@function.macro"] = { fg = colors.color6 }, -- For macro defined functions (calls and definitions): each macro_rules in Ruscp.
+		["@method"] = { fg = colors.color4 }, -- For method calls and definitions.
+
+		["@method.call"] = { fg = colors.color4 }, -- method calls
+
+		["@constructor"] = { fg = colors.color3 }, -- For constructor calls and definitions: = { } in Lua, and Java constructors.
+		["@parameter"] = { fg = colors.color6 }, -- For parameters of a function.
+
+		-- Keywords
+		["@keyword"] = { fg = colors.color5 }, -- For keywords that don't fall in previous categories.
+		["@keyword.function"] = { fg = colors.color5 }, -- For keywords used to define a fuction.
+		["@keyword.operator"] = { fg = colors.color5 }, -- For new keyword operator
+		["@keyword.return"] = { fg = colors.color5 },
+
+		["@conditional"] = { fg = colors.color5 }, -- For keywords related to conditionnals.
+		["@repeat"] = { fg = colors.color5 }, -- For keywords related to loops.
+		-- @debug            ; keywords related to debugging
+		["@label"] = { fg = colors.color5 }, -- For labels: label: in C and :label: in Lua.
+		["@include"] = { fg = colors.color5 }, -- For includes: #include in C, use or extern crate in Rust, or require in Lua.
+		["@exception"] = { fg = colors.color1 }, -- For exception related keywords.
+
+		-- Types
+
+		["@type"] = { fg = colors.color3 }, -- For types.
+		["@type.builtin"] = { fg = colors.color3 }, -- For builtin types.
+		["@type.definition"] = { fg = colors.color6 }, -- type definitions (e.g. `typedef` in C)
+		["@type.qualifier"] = { fg = colors.color5 }, -- type qualifiers (e.g. `const`)
+
+		["@storageclass"] = { fg = colors.color3 }, -- visibility/life-time/etc. modifiers (e.g. `static`)
+		["@attribute"] = { fg = colors.color4 }, -- attribute annotations (e.g. Python decorators)
+		["@field"] = { fg = colors.color6 }, -- For fields.
+		["@property"] = { fg = colors.color6 }, -- Same as TSField.
+
+		-- Identifiers
+
+		["@variable"] = { fg = colors.foreground }, -- Any variable name that does not have another highlighcp.
+		["@variable.builtin"] = { fg = colors.color3 }, -- Variable names that are defined by the languages, like this or self.
+
+		["@constant"] = { fg = colors.color3 }, -- For constants
+		["@constant.builtin"] = { fg = colors.color3 }, -- For constant that are built in the language: nil in Lua.
+		["@constant.macro"] = { fg = colors.color1 }, -- For constants that are defined by macros: NULL in cp.
+
+		["@namespace"] = { fg = colors.color5 }, -- For identifiers referring to modules and namespaces.
+		["@symbol"] = { fg = colors.color5 },
+
+		-- Text
+
+		["@text"] = { fg = colors.foreground }, -- For strings considerated text in a markup language.
+		["@text.strong"] = { fg = colors.foreground, bold = true }, -- italic
+		["@text.underline"] = { sp = colors.foreground, undercurl = true }, -- underlined text
+		["@text.strike"] = { fg = colors.foreground }, -- strikethrough text
+		["@text.title"] = { fg = colors.color4 }, -- titles like: # Example
+		["@text.uri"] = { fg = colors.color6, undercurl = true }, -- urls, links and emails
+		["@text.math"] = { fg = colors.color4 }, -- math environments (e.g. `$ ... $` in LaTeX)
+		["@text.environment"] = { fg = colors.color5 }, -- text environments of markup languages
+		["@text.environment.name"] = { fg = colors.color4 }, -- text indicating the type of an environment
+		["@text.reference"] = { fg = colors.color5 }, -- references
+
+		["@text.todo"] = { bg = colors.color3 }, -- todo notes
+		["@text.note"] = { fg = colors.background, bg = colors.color5 },
+		["@text.warning"] = { fg = colors.background, bg = colors.color3 },
+		["@text.danger"] = { fg = colors.background, bg = colors.color1 },
+
+		["@text.diff.add"] = { fg = colors.color2 }, -- added text (for diff files)
+		["@text.diff.delete"] = { fg = colors.color1 }, -- deleted text (for diff files)
+
+		-- Tags
+		["@tag"] = { fg = colors.color1 }, -- Tags like html tag names.
+		["@tag.attribute"] = { fg = colors.color4 }, -- Tags like html tag names.
+		["@tag.delimiter"] = { fg = colors.foreground }, -- Tag delimiter like < > /
+
+		-- Language specific:
+
+		-- toml
+		["@property.toml"] = { fg = colors.color4 }, -- Differentiates between string and properties
+
+		-- json
+		["@label.json"] = { fg = colors.color4 }, -- For labels: label: in C and :label: in Lua.
+
+		-- lua
+		["@field.lua"] = { fg = colors.color6 },
+		["@constructor.lua"] = { fg = colors.color4 }, -- For constructor calls and definitions: = { } in Lua, and Java constructors.
+
+		-- typescript
+		["@constructor.typescript"] = { fg = colors.color3 },
+
+		-- TSX (Typescript React)
+		["@keyword.export"] = { fg = colors.color5 },
+		["@constructor.tsx"] = { fg = colors.color3 },
+		["@tag.attribute.tsx"] = { fg = colors.color5 },
+
+		-- cpp
+		["@property.cpp"] = { fg = colors.color5 },
+
+		-- yaml
+		["@field.yaml"] = { fg = colors.color4 }, -- For fields.
+
+		-- Ruby
+		["@symbol.ruby"] = { fg = colors.color1 },
 
     -- LspTrouble
     LspTroubleText = { fg = colors.foreground },

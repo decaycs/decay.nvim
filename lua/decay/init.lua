@@ -17,7 +17,7 @@ function M.setup (opts)
   end
   -- disable bold
   vim.cmd [[ set t_md= ]]
-  vim.opt.termguicolors = true
+	vim.opt.termguicolors = true
   vim.g.decay_style = opts.style
 
   local cmp_opts = opts.cmp or { block_kind = false }
