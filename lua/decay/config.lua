@@ -56,7 +56,7 @@ M.highlights_base = function (colors, opts)
     String = { fg = colors.color2 },
     Character = { fg = colors.color12 },
     Constant = { fg = colors.color5 },
-    Number = { fg = colors.color3 },
+    Number = { fg = colors.color1 },
     Boolean = { fg = colors.color5 },
     Float = { fg = colors.color5 },
     Identifier = { fg = colors.color5 },
