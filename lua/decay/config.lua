@@ -128,17 +128,17 @@ M.highlights_base = function (colors, opts)
     ["@parameter"] = { fg = colors.color6 }, -- For parameters of a function.
 
     -- Keywords
-    ["@keyword"] = { fg = colors.color5 }, -- For keywords that don't fall in previous categories.
-    ["@keyword.function"] = { fg = colors.color5 }, -- For keywords used to define a fuction.
+    ["@keyword"] = { fg = colors.color5, italic = opts.italics.code }, -- For keywords that don't fall in previous categories.
+    ["@keyword.function"] = { fg = colors.color5, italic = opts.italics.code }, -- For keywords used to define a fuction.
     ["@keyword.operator"] = { fg = colors.color5 }, -- For new keyword operator
-    ["@keyword.return"] = { fg = colors.color5 },
+    ["@keyword.return"] = { fg = colors.color5, italic = opts.italics.code },
 
-    ["@conditional"] = { fg = colors.color5 }, -- For keywords related to conditionnals.
-    ["@repeat"] = { fg = colors.color5 }, -- For keywords related to loops.
+    ["@conditional"] = { fg = colors.color5, italic = opts.italics.code }, -- For keywords related to conditionnals.
+    ["@repeat"] = { fg = colors.color5, italic = opts.italics.code }, -- For keywords related to loops.
     -- @debug            ; keywords related to debugging
     ["@label"] = { fg = colors.color5 }, -- For labels: label: in C and :label: in Lua.
-    ["@include"] = { fg = colors.color5 }, -- For includes: #include in C, use or extern crate in Rust, or require in Lua.
-    ["@exception"] = { fg = colors.color1 }, -- For exception related keywords.
+    ["@include"] = { fg = colors.color5, italic = opts.italics.code }, -- For includes: #include in C, use or extern crate in Rust, or require in Lua.
+    ["@exception"] = { fg = colors.color1, italic = opts.italics.code }, -- For exception related keywords.
 
     -- Types
 
@@ -167,7 +167,7 @@ M.highlights_base = function (colors, opts)
     -- Text
 
     ["@text"] = { fg = colors.foreground }, -- For strings considerated text in a markup language.
-    ["@text.strong"] = { fg = colors.foreground, bold = true }, -- italic
+    ["@text.strong"] = { fg = colors.foreground }, -- italic
     ["@text.emphasis"] = { fg = colors.color6 },
     ["@text.underline"] = { sp = colors.foreground, undercurl = true }, -- underlined text
     ["@text.strike"] = { fg = colors.foreground }, -- strikethrough text
