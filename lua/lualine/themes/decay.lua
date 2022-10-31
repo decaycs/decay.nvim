@@ -4,33 +4,33 @@ local colors = core.get_colors(vim.g.decay_style)
 local decay = {}
 
 decay.normal = {
-  a = { bg = colors.color4, fg = colors.background },
+  a = { bg = colors.blue, fg = colors.background },
   b = { bg = colors.lighter, fg = colors.foreground },
   c = { bg = colors.statusline_bg, fg = colors.statusline_bg },
 }
 
 decay.insert = {
-  a = { bg = colors.color2, fg = colors.background },
+  a = { bg = colors.green, fg = colors.background },
   b = { bg = colors.lighter, fg = colors.foreground },
 }
 
 decay.command = {
-  a = { bg = colors.color1, fg = colors.background },
+  a = { bg = colors.red, fg = colors.background },
   b = { bg = colors.lighter, fg = colors.foreground },
 }
 
 decay.visual = {
-  a = { bg = colors.color6, fg = colors.background },
+  a = { bg = colors.cyan, fg = colors.background },
   b = { bg = colors.lighter, fg = colors.foreground },
 }
 
 decay.replace = {
-  a = { bg = colors.color1, fg = colors.background },
+  a = { bg = colors.red, fg = colors.background },
   b = { bg = colors.lighter, fg = colors.foreground },
 }
 
 decay.inactive = {
-  a = { bg = colors.background, fg = colors.color7 },
+  a = { bg = colors.background, fg = colors.white },
   b = { bg = colors.lighter, fg = colors.foreground },
   c = { bg = colors.statusline_bg, fg = colors.foreground },
 }
