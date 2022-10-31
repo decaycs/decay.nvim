@@ -26,6 +26,7 @@ local function get_decayce()
     color13 = "#c79bf0",
     color14 = "#98d3ee",
     color15 = "#d0d3d8",
+		accent = "#8baff1",
   }
 end
 
@@ -55,6 +56,7 @@ local function get_darker_decay()
     color13 = "#cb8ff3",
     color14 = "#79c3ee",
     color15 = "#e3e6eb",
+		accent = "#78dba9",
   }
 end
 
@@ -84,6 +86,7 @@ local function get_decay()
     color13 = "#cb8ff3",
     color14 = "#79c3ee",
     color15 = "#e3e6eb",
+		accent = "#78dba9",
   }
 end
 
@@ -113,6 +116,7 @@ local function get_light_decay()
     color13 = "#a86cd0",
     color14 = "#56a0cb",
     color15 = "#1f2328",
+		accent = "#69b373",
   }
 end
 

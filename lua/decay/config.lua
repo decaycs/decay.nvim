@@ -287,25 +287,76 @@ M.highlights_base = function (colors, opts)
     NvimTreeStatusLineNC = { bg = colors.background, fg = colors.background },
 
     -- LspSaga
-    LspFloatWinNormal = { bg = colors.background },
-    LspFloatWinBorder = { fg = colors.background },
-    LspSagaBorderTitle = { fg = colors.color7 },
-    LspSagaHoverBorder = { fg = colors.color7 },
-    LspSagaRenameBorder = { fg = colors.color4 },
-    LspSagaDefPreviewBorder = { fg = colors.color4 },
-    LspSagaCodeActionBorder = { fg = colors.color7 },
-    LspSagaCodeActionTitle = { fg = colors.color7 },
-    LspSagaCodeActionContent = { fg = colors.color6 },
-    LspSagaSignatureHelpBorder = { fg = colors.color1 },
-    LspSagaDiagnosticHeader = { fg = colors.color4 },
-    LspSagaDiagnosticBorder = { fg = colors.comments },
-    LspSagaLspFinderBorder = { fg = colors.comments },
-    LspSagaFinderSelection = { fg = colors.colo4 },
-    ReferencesCount = { fg = colors.color6 },
-    DefinitionCount = { fg = colors.color6 },
-    DefinitionIcon = { fg = colors.color7 },
-    ReferencesIcon = { fg = colors.color7 },
-    TargetWord = { fg = colors.color7 },
+		LspSagaCodeActionTitle = { fg = colors.accent },
+		LspSagaCodeActionBorder = { fg = colors.lighter },
+		LspSagaCodeActionTrunCateLine = { fg = colors.lighter },
+		LspSagaCodeActionContent = { fg = colors.foreground },
+		-- finder
+		LspSagaLspFinderBorder = { fg = colors.lighter },
+		LspSagaAutoPreview = { fg = colors.lighter },
+		LspSagaFinderSelection = { fg = colors.cursorline },
+		TargetFileName = { fg = colors.accent },
+		FinderParam = { fg = colors.color6 },
+		FinderVirtText = { fg = colors.color5 },
+		DefinitionsIcon = { fg = colors.color4 },
+		Definitions = { fg = colors.color4 },
+		DefinitionCount = { fg = colors.coolor4 },
+		ReferencesIcon = { fg = colors.color3 },
+		References = { fg = colors.color2 },
+		ReferencesCount = { fg = colors.color2 },
+		ImplementsIcon = { fg = colors.color5 },
+		Implements = { fg = colors.color5 },
+		ImplementsCount = { fg = colors.color5 },
+		--finder spinner
+		FinderSpinnerBorder = { fg = colors.lighter },
+		FinderSpinnerTitle = { fg = colors.accent },
+		FinderSpinner = { fg = colors.accent },
+		FinderPreviewSearch = { fg = colors.color2 },
+		-- definition
+		DefinitionBorder = { fg = colors.lighter },
+		DefinitionArrow = { fg = colors.accent },
+		DefinitionSearch = { fg = colors.color2 },
+		DefinitionFile = { bg = colors.foreground },
+		-- hover
+		LspSagaHoverBorder = { fg = colors.lighter },
+		LspSagaHoverTrunCateLine = { fg = colors.lighter },
+		-- rename
+		LspSagaRenameBorder = { fg = colors.lighter },
+		LspSagaRenameMatch = { fg = colors.comments },
+		-- diagnostic
+		LspSagaDiagnosticSource = { link = 'Comment' },
+		LspSagaDiagnosticError = { link = 'DiagnosticError' },
+		LspSagaDiagnosticWarn = { link = 'DiagnosticWarn' },
+		LspSagaDiagnosticInfo = { link = 'DiagnosticInfo' },
+		LspSagaDiagnosticHint = { link = 'DiagnosticHint' },
+		LspSagaErrorTrunCateLine = { link = 'DiagnosticError' },
+		LspSagaWarnTrunCateLine = { link = 'DiagnosticWarn' },
+		LspSagaInfoTrunCateLine = { link = 'DiagnosticInfo' },
+		LspSagaHintTrunCateLine = { link = 'DiagnosticHint' },
+		LspSagaDiagnosticBorder = { fg = colors.lighter },
+		LspSagaDiagnosticHeader = { fg = colors.accent },
+		DiagnosticQuickFix = { fg = colors.accent },
+		DiagnosticMap = { fg = colors.color5 },
+		DiagnosticLineCol = { fg = colors.comments },
+		LspSagaDiagnosticTruncateLine = { link = 'LspSagaDiagnosticBorder' },
+		ColInLineDiagnostic = { link = 'Comment' },
+		-- signture help
+		LspSagaSignatureHelpBorder = { fg = colors.lighter },
+		LspSagaShTrunCateLine = { link = 'LspSagaSignatureHelpBorder' },
+		-- lightbulb
+		LspSagaLightBulb = { link = 'DiagnosticSignHint' },
+		-- shadow
+		SagaShadow = { fg = 'black' },
+		-- float
+		LspSagaBorderTitle = { link = 'String' },
+		-- Outline
+		LSOutlinePreviewBorder = { fg = colors.lighter },
+		OutlineIndentEvn = { fg = colors.color5 },
+		OutlineIndentOdd = { fg = colors.color3 },
+		OutlineFoldPrefix = { fg = colors.accent },
+		OutlineDetail = { fg = colors.comments },
+		-- all floatwindow of lspsaga
+		LspFloatWinNormal = { link = 'Normal' },
 
     -- NeoVim
     healthError = { fg = colors.color1 },
@@ -315,12 +366,14 @@ M.highlights_base = function (colors, opts)
     -- BufferLine
     BufferLineIndicatorSelected = { fg = colors.color2 },
     BufferLineFill = { fg = colors.foreground, bg = colors.contrast },
+		BufferLineGroupLabel = { fg = colors.contrast, bg = colors.accent },
+		BufferLineGroupSeparator = { fg = colors.accent, bg = colors.contrast },
 
-   -- Barbar
-   BufferCurrentSign = { fg = colors.blue, bg = colors.blue },
-   BufferInactiveSign = { fg = colors.background, bg = colors.background },
-   BufferOffset = { fg = colors.background, bg = colors.background },
-   BufferTabpageFill = { fg = colors.background, bg = colors.background },
+		-- Barbar
+		BufferCurrentSign = { fg = colors.blue, bg = colors.blue },
+		BufferInactiveSign = { fg = colors.background, bg = colors.background },
+		BufferOffset = { fg = colors.background, bg = colors.background },
+		BufferTabpageFill = { fg = colors.background, bg = colors.background },
 
     -- Diagnostics support
     DiagnosticError = { fg = colors.color1 }, -- red
