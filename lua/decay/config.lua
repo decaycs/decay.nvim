@@ -316,13 +316,13 @@ M.highlights_base = function (colors, opts)
 		DefinitionBorder = { fg = colors.lighter },
 		DefinitionArrow = { fg = colors.accent },
 		DefinitionSearch = { fg = colors.green },
-		DefinitionFile = { bg = colors.foreground },
+		DefinitionFile = { fg = colors.accent },
 		-- hover
 		LspSagaHoverBorder = { fg = colors.lighter },
 		LspSagaHoverTrunCateLine = { fg = colors.lighter },
 		-- rename
 		LspSagaRenameBorder = { fg = colors.lighter },
-		LspSagaRenameMatch = { fg = colors.comments },
+		LspSagaRenameMatch = { fg = colors.black },
 		-- diagnostic
 		LspSagaDiagnosticSource = { link = 'Comment' },
 		LspSagaDiagnosticError = { link = 'DiagnosticError' },
@@ -337,7 +337,7 @@ M.highlights_base = function (colors, opts)
 		LspSagaDiagnosticHeader = { fg = colors.accent },
 		DiagnosticQuickFix = { fg = colors.accent },
 		DiagnosticMap = { fg = colors.magenta },
-		DiagnosticLineCol = { fg = colors.comments },
+		DiagnosticLineCol = { fg = colors.black },
 		LspSagaDiagnosticTruncateLine = { link = 'LspSagaDiagnosticBorder' },
 		ColInLineDiagnostic = { link = 'Comment' },
 		-- signture help
@@ -354,7 +354,7 @@ M.highlights_base = function (colors, opts)
 		OutlineIndentEvn = { fg = colors.magenta },
 		OutlineIndentOdd = { fg = colors.yellow },
 		OutlineFoldPrefix = { fg = colors.accent },
-		OutlineDetail = { fg = colors.comments },
+		OutlineDetail = { fg = colors.black },
 		-- all floatwindow of lspsaga
 		LspFloatWinNormal = { link = 'Normal' },
 
