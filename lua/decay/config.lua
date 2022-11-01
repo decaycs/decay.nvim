@@ -366,14 +366,14 @@ M.highlights_base = function (colors, opts)
     -- BufferLine
     BufferLineIndicatorSelected = { fg = colors.green },
     BufferLineFill = { fg = colors.foreground, bg = colors.contrast },
-		BufferLineGroupLabel = { fg = colors.contrast, bg = colors.accent },
-		BufferLineGroupSeparator = { fg = colors.accent, bg = colors.contrast },
+    BufferLineGroupLabel = { fg = colors.contrast, bg = colors.accent },
+    BufferLineGroupSeparator = { fg = colors.accent, bg = colors.contrast },
 
-		-- Barbar
-		BufferCurrentSign = { fg = colors.blue, bg = colors.blue },
-		BufferInactiveSign = { fg = colors.background, bg = colors.background },
-		BufferOffset = { fg = colors.background, bg = colors.background },
-		BufferTabpageFill = { fg = colors.background, bg = colors.background },
+    -- Barbar
+    BufferCurrentSign = { fg = colors.blue },
+    BufferInactiveSign = { fg = colors.background, bg = colors.background },
+    BufferOffset = { fg = colors.background, bg = colors.background },
+    BufferTabpageFill = { fg = colors.background, bg = colors.background },
 
     -- Diagnostics support
     DiagnosticError = { fg = colors.red }, -- red
