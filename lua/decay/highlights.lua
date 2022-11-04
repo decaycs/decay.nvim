@@ -91,6 +91,10 @@ function M.highlight_all(colors, opts)
             CmpItemMenu = { fg = colors.green },
         }
     end
+
+    if opts.override then
+        M.bulk_hi(opts.override)
+    end
 end
 
 return M

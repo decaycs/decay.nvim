@@ -184,3 +184,30 @@ local colors = core.get_colors(<style>)
 
 print(colors.background) -- shows the background of the selected palette!
 ```
+
+## Overriding colors
+
+You can override some highlights as you want too using the `.setup` method aswell, example:
+
+```lua
+local style = 'decayce' -- or another style of course
+local colors = require('decay.core').get_colors(style)
+
+require 'decay'.setup {
+    style = style,
+    cmp = {
+        block_kind = true,
+    },
+    nvim_tree = {
+        contrast = true,
+    },
+    italics = {
+        code = true,
+        comments = true,
+    },
+    override = {
+        -- override property colors using treesitters highlights
+        ["@property"] = { fg = colors.red },
+    }
+}
+```
