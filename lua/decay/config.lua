@@ -99,7 +99,7 @@ M.highlights_base = function (colors, opts)
 
     -- Punctuation
     ["@punctuation.delimiter"] = { fg = colors.cyan }, -- For delimiters ie: .
-    ["@punctuation.bracket"] = { fg = colors.cyan }, -- For brackets and parenthesis.
+    ["@punctuation.bracket"] = { fg = colors.brightblack }, -- For brackets and parenthesis.
     ["@punctuation.special"] = { fg = colors.cyan }, -- For special punctutation that does not fall in the catagories before.
 
     -- Literals
@@ -125,7 +125,7 @@ M.highlights_base = function (colors, opts)
     ["@method.call"] = { fg = colors.blue }, -- method calls
 
     ["@constructor"] = { fg = colors.yellow }, -- For constructor calls and definitions: = { } in Lua, and Java constructors.
-    ["@parameter"] = { fg = colors.cyan }, -- For parameters of a function.
+    ["@parameter"] = { fg = colors.teal }, -- For parameters of a function.
 
     -- Keywords
     ["@keyword"] = { fg = colors.magenta, italic = opts.italics.code }, -- For keywords that don't fall in previous categories.
@@ -142,22 +142,22 @@ M.highlights_base = function (colors, opts)
 
     -- Types
 
-    ["@type"] = { fg = colors.yellow }, -- For types.
-    ["@type.builtin"] = { fg = colors.yellow }, -- For builtin types.
+    ["@type"] = { fg = colors.orange }, -- For types.
+    ["@type.builtin"] = { fg = colors.orange }, -- For builtin types.
     ["@type.definition"] = { fg = colors.cyan }, -- type definitions (e.g. `typedef` in C)
     ["@type.qualifier"] = { fg = colors.magenta }, -- type qualifiers (e.g. `const`)
 
     ["@storageclass"] = { fg = colors.yellow }, -- visibility/life-time/etc. modifiers (e.g. `static`)
     ["@attribute"] = { fg = colors.blue }, -- attribute annotations (e.g. Python decorators)
     ["@field"] = { fg = colors.cyan }, -- For fields.
-    ["@property"] = { fg = colors.cyan }, -- Same as TSField.
+    ["@property"] = { fg = colors.lavender }, -- Same as TSField.
 
     -- Identifiers
 
     ["@variable"] = { fg = colors.foreground }, -- Any variable name that does not have another highlighcp.
     ["@variable.builtin"] = { fg = colors.yellow }, -- Variable names that are defined by the languages, like this or self.
 
-    ["@constant"] = { fg = colors.yellow }, -- For constants
+    ["@constant"] = { fg = colors.orange }, -- For constants
     ["@constant.builtin"] = { fg = colors.yellow }, -- For constant that are built in the language: nil in Lua.
     ["@constant.macro"] = { fg = colors.red }, -- For constants that are defined by macros: NULL in cp.
 
