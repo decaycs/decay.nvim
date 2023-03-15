@@ -10,7 +10,7 @@ decay.normal = {
 }
 
 decay.insert = {
-  a = { bg = colors.green, fg = colors.background },
+  a = { bg = colors.accent, fg = colors.background },
   b = { bg = colors.lighter, fg = colors.foreground },
 }
 
