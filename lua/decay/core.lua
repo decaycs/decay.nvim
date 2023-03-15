@@ -65,7 +65,7 @@ local function get_cosmic_decay()
 		brightcyan = "#A3D2E7",
 		brightwhite = "#DDDFE4",
 		lavender = "#a9acdb",
-		accent = "#94B4EF",
+		accent = "#a9acdb",
 		["@overrides"] = function(colors)
 			return {
 				["@field.lua"] = { fg = colors.sky },
