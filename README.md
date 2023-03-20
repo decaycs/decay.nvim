@@ -54,7 +54,7 @@ if not present then
 end
 
 decay.setup({
-  style = 'normal',
+  style = 'default',
   nvim_tree = {
     contrast = true, -- or false to disable tree contrast
   },
@@ -65,7 +65,7 @@ or if u want a more simple example:
 
 ```lua
 require('decay').setup({
-  style = 'normal',
+  style = 'default',
   nvim_tree = {
     contrast = true, -- or false to disable tree contrast
   },
@@ -89,7 +89,7 @@ Or the light palette too :)
 vim.o.background = 'light'
 
 require('decay').setup({
-  style = 'normal', -- anyways will load the lighter palette, cuz `vim.o.background` is `light`
+  style = 'default', -- anyways will load the lighter palette, cuz `vim.o.background` is `light`
   nvim_tree = {
     contrast = true -- nvim tree contrast
   },
@@ -111,9 +111,9 @@ You can enable italics too!
 
 ```lua
 require('decay').setup({
-  style = 'normal',
+  style = 'default',
   italics = {
-    code = true,
+  code = true,
     comments = false -- to disable italic comments, replace to true to enable
   },
   nvim_tree = {
@@ -179,7 +179,7 @@ You can get the colors of decay using the decay-lua based api! Check at this :3
 ```lua
 local core = require 'decay.core'
 
- -- style could be: normal, dark or decayce, if you want the lighter palette, just pass anyone but set the background to light before call this!
+ -- style could be: default, dark, decayce or cosmic (experimental), if you want the lighter palette, just pass anyone but set the background to light before call this!
 local colors = core.get_colors(<style>)
 
 print(colors.background) -- shows the background of the selected palette!
@@ -194,21 +194,21 @@ local style = 'decayce' -- or another style of course
 local colors = require('decay.core').get_colors(style)
 
 require 'decay'.setup {
-    style = style,
-    cmp = {
-        block_kind = true,
-    },
-    nvim_tree = {
-        contrast = true,
-    },
-    italics = {
-        code = true,
-        comments = true,
-    },
-    override = {
-        -- override property colors using treesitters highlights
-        ["@property"] = { fg = colors.red },
-    }
+  style = style,
+  cmp = {
+    block_kind = true,
+  },
+  nvim_tree = {
+    contrast = true,
+  },
+  italics = {
+    code = true,
+    comments = true,
+  },
+  override = {
+    -- override property colors using treesitters highlights
+    ["@property"] = { fg = colors.red },
+  }
 }
 ```
 
@@ -219,43 +219,43 @@ local style = 'decayce' -- or another style of course
 local colors = require('decay.core').get_colors(style)
 
 require 'decay'.setup {
-    style = style,
-    cmp = {
-        block_kind = true,
-    },
-    nvim_tree = {
-        contrast = true,
-    },
-    italics = {
-        code = true,
-        comments = true,
-    },
-    palette_overrides = {
-        background = "#191C1C",
-        contrast = "#161919",
-        statusline_bg = "#222626",
-        lighter = "#2f3434",
-        foreground = "#B1CCC9",
-        cursorline = "#2f3434",
-        comments = "#3F4947",
-        cursor = "#B1CCC9",
-        black = "#2D3130",
-        red = "#e88693",
-        green = "#4FDAD1",
-        yellow = "#ecd3a0",
-        blue = "#97b1e2",
-        magenta = "#caabe6",
-        cyan = "#93cee9",
-        white = "#cbced3",
-        brightblack = "#2f3434",
-        brightred = "#e88693",
-        brightgreen = "#4FDAD1",
-        brightyellow = "#ecd3a0",
-        brightblue = "#97b1e2",
-        brightmagenta = "#caabe6",
-        brightcyan = "#98d3ee",
-        brightwhite = "#B1CCC9",
-        accent = "#4FDAD1",
-    }
+  style = style,
+  cmp = {
+    block_kind = true,
+  },
+  nvim_tree = {
+    contrast = true,
+  },
+  italics = {
+    code = true,
+    comments = true,
+  },
+  palette_overrides = {
+    background = "#191C1C",
+    contrast = "#161919",
+    statusline_bg = "#222626",
+    lighter = "#2f3434",
+    foreground = "#B1CCC9",
+    cursorline = "#2f3434",
+    comments = "#3F4947",
+    cursor = "#B1CCC9",
+    black = "#2D3130",
+    red = "#e88693",
+    green = "#4FDAD1",
+    yellow = "#ecd3a0",
+    blue = "#97b1e2",
+    magenta = "#caabe6",
+    cyan = "#93cee9",
+    white = "#cbced3",
+    brightblack = "#2f3434",
+    brightred = "#e88693",
+    brightgreen = "#4FDAD1",
+    brightyellow = "#ecd3a0",
+    brightblue = "#97b1e2",
+    brightmagenta = "#caabe6",
+    brightcyan = "#98d3ee",
+    brightwhite = "#B1CCC9",
+    accent = "#4FDAD1",
+  }
 }
 ```

@@ -1,3 +1,5 @@
+local util = require("decay.util")
+
 local M = {}
 
 local function get_decayce()
@@ -195,7 +197,18 @@ function M.get_colors(style)
 	}
 
 	function get_style:by_style(stylename)
-		return self[stylename]()
+    local generator = self[stylename]
+    if not generator then
+      generator = self.default
+      print((
+        '[decay warning]: defaulting to default palette, '
+          .. stylename
+          .. ' was not recognized as a valid palette name, valid palettes: '
+          .. util:str_tbl_keys(self, {'by_style'})
+      ))
+    end
+
+    return generator()
 	end
 
 	return get_style:by_style(style)

@@ -364,7 +364,7 @@ M.highlights_base = function (colors, opts)
     healthWarning = { fg = colors.magenta },
 
     -- BufferLine
-    BufferLineIndicatorSelected = { fg = colors.accent },
+    BufferLineIndicatorSelected = { fg = colors.green },
     BufferLineFill = { fg = colors.foreground, bg = colors.contrast },
     BufferLineGroupLabel = { fg = colors.contrast, bg = colors.accent },
     BufferLineGroupSeparator = { fg = colors.accent, bg = colors.contrast },
