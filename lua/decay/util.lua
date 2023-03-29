@@ -1,5 +1,34 @@
 local _util = { mt = {} }
 
+_util.bg = "#000000"
+_util.fg = "#ffffff"
+
+local function hexToRgb(c)
+  c = string.lower(c)
+  return { tonumber(c:sub(2, 3), 16), tonumber(c:sub(4, 5), 16), tonumber(c:sub(6, 7), 16) }
+end
+
+function _util.blend(foreground, background, alpha)
+  alpha = type(alpha) == "string" and (tonumber(alpha, 16) / 0xff) or alpha
+  local bg = hexToRgb(background)
+  local fg = hexToRgb(foreground)
+
+  local blendChannel = function(i)
+    local ret = (alpha * fg[i] + ((1 - alpha) * bg[i]))
+    return math.floor(math.min(math.max(0, ret), 255) + 0.5)
+  end
+
+  return string.format("#%02x%02x%02x", blendChannel(1), blendChannel(2), blendChannel(3))
+end
+
+function _util.darken(hex, amount, bg)
+  return _util.blend(hex, bg or _util.bg, amount)
+end
+
+function _util.lighten(hex, amount, fg)
+  return _util.blend(hex, fg or _util.fg, amount)
+end
+
 function _util:crush(t1, t2)
   for k, v in pairs(t2) do
     t1[k] = v

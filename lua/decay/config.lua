@@ -1,4 +1,5 @@
 local M = {}
+local util = require("decay.util")
 
 M.highlights_base = function (colors, opts)
   return {
@@ -380,6 +381,11 @@ M.highlights_base = function (colors, opts)
     DiagnosticWarn = { fg = colors.yellow }, -- yellow
     DiagnosticInfo = { fg = colors.blue }, -- blue
     DiagnosticHint = { fg = colors.cyan }, -- cyan
+
+    DiagnosticVirtualTextError = { bg = util.darken(colors.red, 0.1), fg = colors.red },
+    DiagnosticVirtualTextWarn = { bg = util.darken(colors.yellow, 0.1), fg = colors.yellow },
+    DiagnosticVirtualTextInfo = { bg = util.darken(colors.blue, 0.1), fg = colors.blue },
+    DiagnosticVirtualTextHint = { bg = util.darken(colors.cyan, 0.15), fg = colors.cyan },
 
     -- Underline
     DiagnosticUnderlineError = { undercurl = true, sp = colors.red }, -- red
