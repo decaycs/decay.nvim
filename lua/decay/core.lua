@@ -118,8 +118,8 @@ local function get_decay()
 	return {
 		background = "#0d0f13",
 		contrast = "#0c0e12",
-		statusline_bg = "#161a21",
-		lighter = "#1f242e",
+		statusline_bg = "#12151b",
+		lighter = "#161a21",
 		foreground = "#b6beca",
 		cursorline = "#1f242e",
 		comments = "#394254",
