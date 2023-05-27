@@ -207,6 +207,7 @@ M.highlights_base = function(colors, opts)
     ["@lsp.type.keyword"] = { link = "@keyword" },
     ["@lsp.type.namespace"] = { link = "@namespace" },
     ["@lsp.type.number"] = { link = "@number" },
+    ["@lsp.type.function"] = { link = "@function" },
     ["@lsp.type.operator"] = { link = "@operator" },
     ["@lsp.type.parameter"] = { link = "@parameter" },
     ["@lsp.type.property"] = { link = "@property" },
