@@ -231,9 +231,7 @@ M.highlights_base = function(colors, opts)
     TelescopeNormal = { fg = colors.foreground, bg = colors.background },
     TelescopeSelection = { fg = colors.background, bg = colors.accent },
     -- Indent Blank Line
-    IndentBlanklineChar = { fg = colors.black, bg = "NONE" },
-    IndentBlanklineContextChar = { fg = colors.comments, bg = "NONE" },
-    IndentBlanklineContextStart = { sp = colors.comments, underline = true, bg = "NONE" },
+    IblIndent = { fg = colors.black, bg = "NONE" },
     -- NvimTree
     NvimTreeNormal = { fg = colors.foreground, bg = colors.background },
     NvimTreeNormalNC = { fg = colors.foreground, bg = colors.background },
