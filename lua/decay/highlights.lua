@@ -91,6 +91,7 @@ function M.highlight_all(colors, opts)
       CmpItemAbbrMatchFuzzy = { fg = colors.blue },
       CmpItemKind = { fg = colors.blue },
       CmpItemMenu = { fg = colors.green },
+      MatchParen = { fg = colors.background, bg = colors.blue },
     }
   end
 
