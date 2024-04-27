@@ -232,6 +232,7 @@ M.highlights_base = function(colors, opts)
     TelescopeSelection = { fg = colors.background, bg = colors.accent },
     -- Indent Blank Line
     IblIndent = { fg = colors.black, bg = "NONE" },
+    IblScope = { fg = colors.foreground, bg = "NONE" },
     -- NvimTree
     NvimTreeNormal = { fg = colors.foreground, bg = colors.background },
     NvimTreeNormalNC = { fg = colors.foreground, bg = colors.background },
