@@ -229,7 +229,7 @@ M.highlights_base = function(colors, opts)
     -- Telescope
     TelescopeBorder = { fg = colors.black, bg = colors.background },
     TelescopeNormal = { fg = colors.foreground, bg = colors.background },
-    TelescopeSelection = { fg = colors.background, bg = colors.accent },
+    TelescopeSelection = { fg = colors.foreground, bg = colors.cursor },
     -- Indent Blank Line
     IblIndent = { fg = colors.black, bg = "NONE" },
     IblScope = { fg = colors.foreground, bg = "NONE" },
