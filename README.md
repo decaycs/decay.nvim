@@ -1,6 +1,6 @@
 # decay.nvim
 
-This is a port of [Decay Colorscheme](https://github.com/decaycs) for neovim using lua as backend for this :3
+This is a port of the [Decay Colorscheme](https://github.com/decaycs) for neovim using lua.
 
 ![demonstration](./misc/demonstration.png)
 
@@ -22,21 +22,38 @@ This is a port of [Decay Colorscheme](https://github.com/decaycs) for neovim usi
 
 ## Installation
 
-U can use packer or vim-plug or something what u want.
+You can use many packages managers available out there, such as packer.nvim, lazy.nvim, etc.
+
+### Lazy
+
+Use the next lua code as reference.
+
+```lua
+{
+    "decaycs/decay.nvim",
+    name = "decay",
+    lazy = false,
+    priority = true,
+    opts = {
+        style = "normal",
+        nvim_tree = { contrast = false },
+    },
+}
+```
 
 ### Packer
 
-Put this in ur packer config:
+Grab the following snippet.
 
 ```lua
 use {'decaycs/decay.nvim', as = 'decay'}
 ```
 
-Then execute `:PackerInstall` or `:PackerSync` to install decay :3
+Then execute `:PackerInstall` or `:PackerSync` to install decay.
 
 ### Vim plug
 
-Put this in ur config
+Include this in your configuration.
 
 ```vim
 Plug 'decaycs/decay.nvim', { 'as': 'decay' }
@@ -44,77 +61,34 @@ Plug 'decaycs/decay.nvim', { 'as': 'decay' }
 
 ### Enable the theme
 
-To enable the theme u can use the next lua code:
+> [!NOTE]
+> If you've used lazy.nvim as installation method, you could just use the config
+values presented here but inside the `opts` attribute.
+
+To enable the theme you can call the `.setup` method.
 
 ```lua
-local present, decay = pcall(require, 'decay')
-
-if not present then
-  error('Can\'t import decay, make sure u installed it! :v')
-end
-
-decay.setup({
-  style = 'default',
+require("decay").setup({
+  style = 'default', -- Defines the current palette
   nvim_tree = {
     contrast = true, -- or false to disable tree contrast
   },
 })
 ```
 
-or if u want a more simple example:
+Available palettes includes:
+- default
+- dark
+- decayce
 
-```lua
-require('decay').setup({
-  style = 'default',
-  nvim_tree = {
-    contrast = true, -- or false to disable tree contrast
-  },
-})
-```
-
-Or if you want you can try the darker palette! :3
-
-```lua
-require('decay').setup({
-  style = 'dark',
-  nvim_tree = {
-    contrast = true -- or false to disable tree contrast,
-  },
-})
-```
-
-Or the light palette too :)
-
-```lua
-vim.o.background = 'light'
-
-require('decay').setup({
-  style = 'default', -- anyways will load the lighter palette, cuz `vim.o.background` is `light`
-  nvim_tree = {
-    contrast = true -- nvim tree contrast
-  },
-})
-```
-
-Or the colder decay palette: decayce:
-
-```lua
-require('decay').setup({
-  style = 'decayce',
-  nvim_tree = {
-    contrast = true
-  }
-})
-```
-
-You can enable italics too!
+To enable italics, you could do the following.
 
 ```lua
 require('decay').setup({
   style = 'default',
   italics = {
-  code = true,
-    comments = false -- to disable italic comments, replace to true to enable
+    code = true,
+    comments = false,
   },
   nvim_tree = {
     contrast = true
@@ -122,47 +96,35 @@ require('decay').setup({
 })
 ```
 
-Or with vim script if u want (not able the posibility to disable tree contrast)
+### Enable with vim script
+
+Vim script support is quite limited so not much customisation ability is supported.
 
 ```vim
 colorscheme decay
-```
-
-You can enable the darker palette too using vim script! :D
-
-```vim
 colorscheme dark-decay
-```
-
-You can enable decayce using vim script too:
-
-```vim
 colorscheme decayce
 ```
 
-You can use the light palette too using vim script:
-
-```vim
-set background=light
-colorscheme decay
-```
+> [!TIP]
+> To enable the light palette just put `set background=light` before calling `colorscheme`
 
 ## Cmp.nvim
 
-By default the cmp.nvim integration has the kinds highlighted like blocks, u can disable that feature like this:
+By default this theme will create some kind of highlighted blocks, but you can disable them by doing the following
 
 ```lua
 require('decay').setup {
+  -- SNIP
   cmp = {
     block_kind = false,
   },
-  -- SNIP
 }
 ```
 
 ## Lualine
 
-If you use lualine, you can enable the colors with something like this:
+If you use lualine, you can enable the integration with something like this:
 
 ```lua
 require('lualine').setup {
@@ -174,58 +136,62 @@ require('lualine').setup {
 
 ## Getting the colors
 
-You can get the colors of decay using the decay-lua based api! Check at this :3
+You can fetch the colors of a specific palette by using the `core` module.
 
 ```lua
 local core = require 'decay.core'
 
- -- style could be: default, dark, decayce or cosmic (experimental), if you want the lighter palette, just pass anyone but set the background to light before call this!
-local colors = core.get_colors(<style>)
+ -- style could be: default, dark, decayce or cosmic (experimental).
+ -- note that if vim.opt.background is light, even setting the palette will
+ -- anyways return the light palette.
+local STYLE = "dark" -- e.g
+local colors = core.get_colors(STYLE)
 
 print(colors.background) -- shows the background of the selected palette!
 ```
 
 ## Overriding colors
 
-You can override some highlights as you want too using the `.setup` method aswell, example:
+You can override certain highlights according to your needs, take the next code as reference
+to do so.
 
 ```lua
-local style = 'decayce' -- or another style of course
-local colors = require('decay.core').get_colors(style)
+local decay = require("decay")
+local core = require("decay.core")
 
-require 'decay'.setup {
+-- choose an style to fetch the colors
+local STYLE = "decayce"
+local colors = core.get_colors(STYLE)
+
+decay.setup({
   style = style,
-  cmp = {
-    block_kind = true,
-  },
-  nvim_tree = {
-    contrast = true,
-  },
+  cmp = { block_kind = false },
+  nvim_tree = { contrast = true },
   italics = {
     code = true,
     comments = true,
   },
+  -- overriding the `@property` highlight used by treesitter and using the red color instead.
   override = {
-    -- override property colors using treesitters highlights
     ["@property"] = { fg = colors.red },
   }
-}
+})
 ```
 
-And if you want, you can also override the palette instead of specific highlights, example:
+And if you want, you can also override the palette instead of specific highlights, e.g:
 
 ```lua
-local style = 'decayce' -- or another style of course
-local colors = require('decay.core').get_colors(style)
+local decay = require("decay")
+local core = require("decay.core")
 
-require 'decay'.setup {
+-- chose a decay style.
+local STYLE = "decayce"
+local colors = core.get_colors(STYLE)
+
+decay.setup {
   style = style,
-  cmp = {
-    block_kind = true,
-  },
-  nvim_tree = {
-    contrast = true,
-  },
+  cmp = { block_kind = true },
+  nvim_tree = { contrast = true },
   italics = {
     code = true,
     comments = true,
@@ -259,3 +225,6 @@ require 'decay'.setup {
   }
 }
 ```
+
+> ![TIP]
+> Check [core.lua](./lua/decay/core.lua) to see an actual list of attributes specifying palette colors when using `palette_overrides`.
