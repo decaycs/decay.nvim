@@ -1,3 +1,3 @@
 lua << EOF
-require('decay').load("default")
+require('decay').load("auto")
 EOF
