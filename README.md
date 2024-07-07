@@ -34,10 +34,9 @@ Use the next lua code as reference.
     name = "decay",
     lazy = false,
     priority = true,
-    opts = {
-        style = "normal",
-        nvim_tree = { contrast = false },
-    },
+    config = function ()
+        -- SNIP
+    end
 }
 ```
 
@@ -61,57 +60,59 @@ Plug 'decaycs/decay.nvim', { 'as': 'decay' }
 
 ### Enable the theme
 
-> [!NOTE]
-> If you've used lazy.nvim as installation method, you could just use the config
-values presented here but inside the `opts` attribute.
+To enable the theme you can use the `vim.cmd.colorscheme` function or `vim.cmd [[ colorscheme * ]]` if you're using
+an older version of neovim.
 
-To enable the theme you can call the `.setup` method.
+So being the available palettes: dark decay, default decay, light decay, and decayce, you can do:
 
 ```lua
-require("decay").setup({
-  style = 'default', -- Defines the current palette
-  nvim_tree = {
-    contrast = true, -- or false to disable tree contrast
-  },
-})
+vim.cmd.colorscheme "decay-dark"
+vim.cmd.colorscheme "decay-light"
+vim.cmd.colorscheme "decay-default"
+vim.cmd.colorscheme "decayce"
 ```
 
-Available palettes includes:
-- default
-- dark
-- decayce
+#### Customising decay
 
-To enable italics, you could do the following.
+You can customise decay behavior by using the `.setup` function and also calling the colorscheme setting.
 
 ```lua
-require('decay').setup({
-  style = 'default',
+local decay = require("decay")
+
+local opt = vim.opt
+local cmd = vim.cmd
+
+opt.background = "light"
+
+decay.setup({
+  style = "default",
+
+  -- enables italics in code keywords & comments.
   italics = {
     code = true,
-    comments = false,
+    comments = true,
   },
+
+  -- enables contrast when using nvim tree.
   nvim_tree = {
     contrast = true
-  }
+  },
 })
+
+cmd.colorscheme "decay"
 ```
 
-### Enable with vim script
-
-Vim script support is quite limited so not much customisation ability is supported.
-
-```vim
-colorscheme decay
-colorscheme dark-decay
-colorscheme decayce
-```
+Note that in this example we've used "decay" as colorscheme instead of "decay-STYLE"... This is
+because we're already setting the style with the `.setup` method instead.
 
 > [!TIP]
-> To enable the light palette just put `set background=light` before calling `colorscheme`
+> Using `vim.opt.background` enables light decay! no matter what palette you've choosen.
+> Setting background is always recommended though, even to "dark", so, be careful.
 
 ## Cmp.nvim
 
-By default this theme will create some kind of highlighted blocks, but you can disable them by doing the following
+By default this theme will create some kind of highlighted blocks in the cmp menu,
+but you can disable them by adding the following code snippet in your setup block.
 
 ```lua
 require('decay').setup {
@@ -124,7 +125,7 @@ require('decay').setup {
 
 ## Lualine
 
-If you use lualine, you can enable the integration with something like this:
+If you use lualine, you can enable the integration with this:
 
 ```lua
 require('lualine').setup {
