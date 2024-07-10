@@ -98,7 +98,7 @@ M.highlights_base = function(colors, opts)
     ["@operator"] = { fg = colors.cyan },   -- For any operator: +, but also -> and * in cp.
     -- Punctuation
     ["@punctuation.delimiter"] = { fg = colors.cyan },      -- For delimiters ie: .
-    ["@punctuation.bracket"] = { fg = colors.brightblack }, -- For brackets and parenthesis.
+    ["@punctuation.bracket"] = { fg = colors.brackets }, -- For brackets and parenthesis.
     ["@punctuation.special"] = { fg = colors.cyan },        -- For special punctutation that does not fall in the catagories before.
     -- Literals
     ["@string"] = { fg = colors.green },           -- For strings.
@@ -107,7 +107,7 @@ M.highlights_base = function(colors, opts)
     ["@string.special"] = { fg = colors.green },   -- other special strings (e.g. dates)
     ["@character"] = { fg = colors.blue },         -- character literals
     ["@character.special"] = { fg = colors.blue }, -- special characters (e.g. wildcards)
-    ["@boolean"] = { fg = colors.magenta },        -- For booleans.
+    ["@boolean"] = { fg = colors.orange },        -- For booleans.
     ["@number"] = { fg = colors.red },             -- For all numbers
     ["@float"] = { fg = colors.red },              -- For floats.
     -- Functions
@@ -229,7 +229,7 @@ M.highlights_base = function(colors, opts)
     -- Telescope
     TelescopeBorder = { fg = colors.black, bg = colors.background },
     TelescopeNormal = { fg = colors.foreground, bg = colors.background },
-    TelescopeSelection = { fg = colors.foreground, bg = colors.cursor },
+    TelescopeSelection = { fg = colors.foreground, bg = colors.statusline_bg },
     -- Indent Blank Line
     IblIndent = { fg = colors.black, bg = "NONE" },
     IblScope = { fg = colors.foreground, bg = "NONE" },

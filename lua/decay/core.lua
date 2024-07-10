@@ -23,7 +23,7 @@ local function get_decayce()
 		magenta = "#c296eb",
 		cyan = "#93cee9",
 		white = "#cbced3",
-		brightblack = "#2b2d36",
+		brightblack = "#262c46",
 		brightred = "#e26c7c",
 		brightgreen = "#95d3af",
 		brightyellow = "#f1d8a5",
@@ -31,8 +31,9 @@ local function get_decayce()
 		brightmagenta = "#c79bf0",
 		brightcyan = "#98d3ee",
 		brightwhite = "#d0d3d8",
-		lavender = "#a9acdb", -- TODO: Create own lavender for decayce
+		lavender = "#a9acdb",
 		accent = "#8baff1",
+    brackets = "#485385",
 	}
 end
 
@@ -40,7 +41,7 @@ local function get_cosmic_decay()
 	return {
 		background = "#12131c",
 		contrast = "#101119",
-		statusline_bg = "#1b1d2a",
+		statusline_bg = "#2d3046",
 		lighter = "#242637",
 		foreground = "#A5B7D5",
 		cursorline = "#2c2f44",
@@ -68,6 +69,7 @@ local function get_cosmic_decay()
 		brightwhite = "#DDDFE4",
 		lavender = "#a9acdb",
 		accent = "#a9acdb",
+    brackets = "#5d638f",
 		["@overrides"] = function(colors)
 			return {
 				["@field.lua"] = { fg = colors.sky },
@@ -109,8 +111,9 @@ local function get_darker_decay()
 		brightmagenta = "#cb8ff3",
 		brightcyan = "#79c3ee",
 		brightwhite = "#e3e6eb",
-		lavender = "#a9acdb", -- TODO: Create own lavender for dark decay
-		accent = "#78dba9",
+		lavender = "#a9acdb",
+		accent = "#75aaf0",
+    brackets = "#6a7992",
 	}
 end
 
@@ -118,10 +121,10 @@ local function get_decay()
 	return {
 		background = "#171B20",
 		contrast = "#15191d",
-		statusline_bg = "#1a1e23",
+		statusline_bg = "#262d35",
 		lighter = "#21262e",
 		foreground = "#b6beca",
-		cursorline = "#242931",
+		cursorline = "#21262d",
 		comments = "#4d5768",
 		cursor = "#b6beca",
 		black = "#242931",
@@ -144,8 +147,9 @@ local function get_decay()
 		brightmagenta = "#cb8ff3",
 		brightcyan = "#79c3ee",
 		brightwhite = "#e3e6eb",
-		lavender = "#a9acdb", -- TODO: Create own lavender for dark decay
+		lavender = "#a9acdb",
 		accent = "#78dba9",
+    brackets = "#485263",
 	}
 end
 
@@ -158,7 +162,7 @@ local function get_light_decay()
 		foreground = "#101419",
 		cursorline = "#cfd2d7",
 		comments = "#4d5768",
-		cursor = "#b6beca",
+		cursor = "#101419",
 		black = "#c5c8cd",
 		red = "#903035",
 		orange = "#a06d52",
@@ -181,6 +185,7 @@ local function get_light_decay()
 		brightwhite = "#1f2328",
 		lavender = "#585285",
 		accent = "#3c6843",
+    brackets = "#72757b",
 	}
 end
 
