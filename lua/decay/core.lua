@@ -186,6 +186,14 @@ local function get_light_decay()
 		lavender = "#585285",
 		accent = "#3c6843",
     brackets = "#72757b",
+		["@overrides"] = function(colors)
+			return {
+        DiagnosticVirtualTextError = { bg = util.lighten(colors.red, 0.1), fg = colors.red },
+        DiagnosticVirtualTextWarn = { bg = util.lighten(colors.yellow, 0.1), fg = colors.yellow },
+        DiagnosticVirtualTextInfo = { bg = util.lighten(colors.blue, 0.1), fg = colors.blue },
+        DiagnosticVirtualTextHint = { bg = util.lighten(colors.cyan, 0.15), fg = colors.cyan },
+			}
+		end,
 	}
 end
 
