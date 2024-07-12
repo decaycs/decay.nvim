@@ -65,7 +65,7 @@ M.highlights_base = function(colors, opts)
     Operator = { fg = colors.cyan },
     Type = { fg = colors.magenta },
     StorageClass = { fg = colors.magenta },
-    Structure = { fg = colors.cyan },
+    Structure = { fg = colors.lavender },
     Typedef = { fg = colors.cyan },
     Keyword = { fg = colors.magenta, italic = opts.italics.code },
     Statement = { fg = colors.cyan },
@@ -114,7 +114,7 @@ M.highlights_base = function(colors, opts)
     ["@function"] = { fg = colors.blue },         -- For function (calls and definitions).
     ["@function.builtin"] = { fg = colors.blue }, -- For builtin functions: table.insert in Lua.
     ["@function.call"] = { fg = colors.blue },    -- function calls
-    ["@function.macro"] = { fg = colors.cyan },   -- For macro defined functions (calls and definitions): each macro_rules in Ruscp.
+    ["@function.macro"] = { fg = colors.teal },   -- For macro defined functions (calls and definitions): each macro_rules in Ruscp.
     ["@method"] = { fg = colors.blue },           -- For method calls and definitions.
     ["@method.call"] = { fg = colors.blue },      -- method calls
     ["@constructor"] = { fg = colors.yellow },    -- For constructor calls and definitions: = { } in Lua, and Java constructors.
@@ -132,8 +132,8 @@ M.highlights_base = function(colors, opts)
     ["@exception"] = { fg = colors.red, italic = opts.italics.code },       -- For exception related keywords.
     -- Types
 
-    ["@type"] = { fg = colors.orange },            -- For types.
-    ["@type.builtin"] = { fg = colors.orange },    -- For builtin types.
+    ["@type"] = { fg = colors.cyan },            -- For types.
+    ["@type.builtin"] = { fg = colors.cyan },    -- For builtin types.
     ["@type.definition"] = { fg = colors.cyan },   -- type definitions (e.g. `typedef` in C)
     ["@type.qualifier"] = { fg = colors.magenta }, -- type qualifiers (e.g. `const`)
     ["@storageclass"] = { fg = colors.yellow },    -- visibility/life-time/etc. modifiers (e.g. `static`)
